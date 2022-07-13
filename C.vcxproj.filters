@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="그래프\1043_거짓말.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\11403_경로찾기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\11404_플로이드.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\11657_타임머신.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\1197_최소신장트리.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\1219_세일즈맨의고민.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\1325_효율적인해킹.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\1389_케빈베이컨의6단계법칙.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\1414_불우이웃돕기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\1516_게임개발.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\1707_이분그래프.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\1717_집합표현하기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\17472_다리만들기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\1753_최단경로.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\18352_특정거리도시찾기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\1854_K번째최단경로.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\1916_최소비용구하기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\1948_임계경로.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\1976_여행계획짜기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\2251_물통.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그래프\2252_줄세우기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그리디\11047_동전개수최솟값.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그리디\1541_잃어버린괄호.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그리디\1715_ 카드정렬하기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그리디\1744_수묶기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="그리디\1931_회의실배정.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="기하\11758_CCW.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="기하\17387_선분교차.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="기하\2162_선분그룹.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="기하\2166_다각형의면적.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="동적계획법\10844_계단수.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="동적계획법\11049_행렬곱연산횟수의최솟값.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="동적계획법\11726_타일채우기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="동적계획법\1328_빌딩.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="동적계획법\13398_연속합2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="동적계획법\14403_가장길게증가하는부분수열.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="동적계획법\14501_퇴사.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="동적계획법\1463_1로만들기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="동적계획법\1915_가장큰정사각형.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="동적계획법\2098_외판원순회.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="동적계획법\2193_이친수.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="동적계획법\2342_DDR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="동적계획법\2747_피보나치수_BottomUp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="동적계획법\2747_피보나치수_TopDown.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="동적계획법\9252_LCS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="자료구조\10986_나머지합.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="자료구조\11003_최솟값찾기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="자료구조\11286_절댓값힙.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="자료구조\11659_구간합구하기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="자료구조\11660_구간합구하기2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="자료구조\11720_숫자의합.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="자료구조\1253_좋은수.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="자료구조\12891_DNA비밀번호.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="자료구조\1546_평균.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="자료구조\17298_오큰수.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="자료구조\1874_스택수열.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="자료구조\1940_주몽.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="자료구조\2018_연속된자연수의합.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="자료구조\2164_카드.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="정렬\10989_수정렬하기3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="정렬\11004_K번째수.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="정렬\11399_ATM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="정렬\1377_버블소트1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="정렬\1427_내림차순정렬.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="정렬\1517_버블소트2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="정렬\2750_수정렬하기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="정렬\2751_수정렬하기2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="정수론\1016_제곱이아닌수.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="정수론\1033_칵테일.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="정수론\11689_GDCNK1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="정수론\1456_거의소수.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="정수론\1747_소수팰린드롬.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="정수론\1850_최대공약수.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="정수론\1929_소수구하기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="정수론\1934_최소공배수.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="정수론\21568_AxByC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="조합\1010_다리놓기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="조합\11050_이항계수.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="조합\11051_이항계수2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="조합\1256_사전.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="조합\13251_조약돌꺼내기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="조합\1722_순열의순서.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="조합\1947_선물전달.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="조합\2775_부녀회장이될테야.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="탐색\1167_트리의지름.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="탐색\11724_연결요소의개수.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="탐색\1260_DFS와BFS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="탐색\1300_K번째수.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="탐색\13023_친구관계파악하기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="탐색\1920_원하는정수찾기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="탐색\2023_신기한소수.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="탐색\2178_미로탐색.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="탐색\2343_블루레이.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="트리\1068_리프노드.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="트리\10868_최솟값.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="트리\11437_LCA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="트리\11438_LCA2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="트리\11505_구간곱구하기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="트리\11725_트리의부모찾기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="트리\14425_문자열찾기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="트리\1991_트리순회.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="트리\2042_구간합구하기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
