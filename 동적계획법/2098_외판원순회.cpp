@@ -1,41 +1,37 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
-#include <climits>
 using namespace std;
-
+static int INF = 1000000 * 16 + 1;
 static int N;
-static  vector <pair<int, int>> M;
-static long D[502][502];
-int excute(int s, int e);
-
+static int W[16][16];
+static int D[16][(1 << 16)];
+int tsp(int c, int v);
 int main()
 {
-    cin >> N;
-    M.resize(N + 1);
-    for (int i = 0; i < N + 1; i++) {
-        for (int j = 0; j < N + 1; j++) {
-            D[i][j] = -1;
-        }
-    }
-
-    for (int i = 1; i <= N; i++) {
-        int y, x;
-        cin >> y >> x;
-        M[i] = make_pair(y, x);
-    }
-    cout << excute(1, N) << "\n";
+	cin >> N;
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			cin >> W[i][j];
+		}
+	}
+	cout << tsp(0, 1) << "\n";
 }
-
-int excute(int s, int e) {
-    int result = INT_MAX;
-    if (D[s][e] != -1) 	// ÀÌ¹Ì °è»êÇÑ ÀûÀÌ ÀÖ´Â ºÎºĞÀÌ¸é ´Ù½Ã °è»êÇÏÁö ¾Ê´Â´Ù -> ¸Ş¸ğÀÌÁ¦ÀÌ¼Ç
-        return D[s][e];
-    if (s == e) 	// Çà·Ä ÇÑ °³ÀÇ °ö¼À ¿¬»êÀÇ ¼ö
-        return 0;
-    if (s + 1 == e)	 // Çà·Ä µÎ °³ÀÇ °ö¼À ¿¬»êÀÇ ¼ö
-        return M[s].first * M[s].second * M[e].second;
-    for (int i = s; i < e; i++)	 // Çà·ÄÀÌ 3°³ ÀÌ»óÀÏ °æ¿ì °ö¼À¿¬»ê¼ö -> Á¡È­½Ä Ã³¸®
-        result = min(result, M[s].first * M[i].second * M[e].second + excute(s, i) + excute(i + 1, e));
-    return D[s][e] = result;
+int tsp(int c, int v) { // ëª¨ë“  ê²½ìš°ì˜ ìˆ˜ì— ëŒ€í•œ ì™„ì „ íƒìƒ‰, ì¬ê·€ êµ¬í˜„
+	if (v == (1 << N) - 1) { // ëª¨ë“  ë…¸ë“œë¥¼ ë°©ë¬¸í•œ ê²½ìš°
+		return W[c][0] == 0 ? INF : W[c][0];
+	}
+	// ì´ë¯¸ ë°©ë¬¸í•œ ë…¸ë“œì¸ ê²½ìš° â†’ ì´ë¯¸ ê³„ì‚°í•œ ê²½ìš° ë°”ë¡œ ë°˜í™˜(ë©”ëª¨ì´ì œì´ì…˜)
+	if (D[c][v] != 0) {
+		return D[c][v];
+	}
+	int min_val = INF;
+	for (int i = 0; i < N; i++) {
+		// ë°©ë¬¸í•œ ì ì´ ì—†ê³  ê°ˆ ìˆ˜ ìˆëŠ” ë„ì‹œì¸ ê²½ìš°
+		if ((v & (1 << i)) == 0 && W[c][i] != 0) {
+			min_val = min(min_val, tsp(i, (v | (1 << i))) + W[c][i]);
+		}
+	}
+	D[c][v] = min_val;
+	return D[c][v];
 }
