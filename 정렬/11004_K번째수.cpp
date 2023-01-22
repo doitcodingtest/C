@@ -24,11 +24,11 @@ int main()
 
  void quickSort(vector<int> &A, int S, int E, int K) {
     int pivot = partition(A, S, E);
-    if (pivot == K)// K¹øÂ° ¼ö°¡ pivotÀÌ¸é ´õÀÌ»ó ±¸ÇÒ ÇÊ¿ä ¾øÀ½
+    if (pivot == K)// Kë²ˆì§¸ ìˆ˜ê°€ pivotì´ë©´ ë”ì´ìƒ êµ¬í•  í•„ìš” ì—†ìŒ
         return;
-    else if (K < pivot) // K°¡ pivotº¸´Ù ÀÛÀ¸¸é ¿ŞÂÊ ±×·ì¸¸ Á¤·Ä ¼öÇàÇÏ±â
+    else if (K < pivot) // Kê°€ pivotë³´ë‹¤ ì‘ìœ¼ë©´ ì™¼ìª½ ê·¸ë£¹ë§Œ ì •ë ¬ ìˆ˜í–‰í•˜ê¸°
         quickSort(A, S, pivot - 1, K);
-    else // K°¡ pivotº¸´Ù Å©¸é ¿À¸¥ÂÊ ±×·ì¸¸ Á¤·Ä ¼öÇàÇÏ±â
+    else // Kê°€ pivotë³´ë‹¤ í¬ë©´ ì˜¤ë¥¸ìª½ ê·¸ë£¹ë§Œ ì •ë ¬ ìˆ˜í–‰í•˜ê¸°
         quickSort(A, pivot + 1, E, K);
 }
 int partition(vector<int> &A, int S, int E) {
@@ -37,21 +37,25 @@ int partition(vector<int> &A, int S, int E) {
         return E;
     }
     int M = (S + E) / 2;
-    swap(A, S, M); // Áß¾Ó°ªÀ» 1¹øÂ° ¿ä¼Ò·Î ÀÌµ¿ÇÏ
+    swap(A, S, M); // ì¤‘ì•™ê°’ì„ 1ë²ˆì§¸ ìš”ì†Œë¡œ ì´ë™í•˜
     int pivot = A[S];
     int i = S + 1, j = E;
     while (i <= j) {
-        while (pivot < A[j] && j > 0) {   //ÇÇ¹şº¸´Ù ÀÛÀº ¼ö°¡ ³ª¿Ã¶§±îÁö j--
+        while (j >= S + 1 && pivot < A[j]) {   //í”¼ë²—ë³´ë‹¤ ì‘ì€ ìˆ˜ê°€ ë‚˜ì˜¬ë•Œê¹Œì§€ j--
             j--;
         }
-        while (pivot > A[i] && i < A.size() - 1) {  //ÇÇ¹şº¸´Ù Å« ¼ö°¡ ³ª¿Ã ‹š±îÁö i++
+        while (i <= E && pivot > A[i] ) {  //í”¼ë²—ë³´ë‹¤ í° ìˆ˜ê°€ ë‚˜ì˜¬ ë–„ê¹Œì§€ i++
             i++;
         }
-        if (i <= j) {
-            swap(A, i++, j--);  // Ã£Àº i¿Í j¸¦ ±³È¯ÇÏ±â
+
+        if (i < j) {
+            swap(A, i++, j--);  // ì°¾ì€ iì™€ jë¥¼ êµí™˜í•˜ê¸°
+        }
+        else {
+            break;
         }
     }
-    // i == j ÇÇ¹şÀÇ °ªÀ» ¾çÂÊÀ¸·Î ºĞ¸®ÇÑ °¡¿îµ¥¿¡ ¿Àµµ·Ï ¼³Á¤ÇÏ±â
+    // i == j í”¼ë²—ì˜ ê°’ì„ ì–‘ìª½ìœ¼ë¡œ ë¶„ë¦¬í•œ ê°€ìš´ë°ì— ì˜¤ë„ë¡ ì„¤ì •í•˜ê¸°
     A[S] = A[j];
     A[j] = pivot;
     return j;
