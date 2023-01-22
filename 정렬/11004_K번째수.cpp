@@ -37,14 +37,14 @@ int partition(vector<int> &A, int S, int E) {
         return E;
     }
     int M = (S + E) / 2;
-    swap(A, S, M); // 중앙값을 1번째 요소로 이동하
+    swap(A, S, M); // 중앙값을 1번째 요소로 이동하기
     int pivot = A[S];
     int i = S + 1, j = E;
     while (i <= j) {
         while (j >= S + 1 && pivot < A[j]) {   //피벗보다 작은 수가 나올때까지 j--
             j--;
         }
-        while (i <= E && pivot > A[i] ) {  //피벗보다 큰 수가 나올 떄까지 i++
+        while (i <= E && pivot > A[i] ) {  //피벗보다 큰 수가 나올 까지 i++
             i++;
         }
 
