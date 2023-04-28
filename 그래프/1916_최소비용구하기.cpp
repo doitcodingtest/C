@@ -26,7 +26,7 @@ int main()
     std::fill(visited.begin(), visited.end(), false);
     mlist.resize(N + 1);
 
-    for (int i = 0; i < M; i++) {	 // °¡ÁßÄ¡°¡ ÀÖ´Â ÀÎÁ¢ ¸®½ºÆ® ÃÊ±âÈ­
+    for (int i = 0; i < M; i++) {	 // ê°€ì¤‘ì¹˜ê°€ ìˆëŠ” ì¸ì ‘ ë¦¬ìŠ¤íŠ¸ ì´ˆê¸°í™”
         int start, end, weight;
         cin >> start >> end >> weight;
         mlist[start].push_back(make_pair(end, weight));
@@ -39,9 +39,9 @@ int main()
     cout << result << "\n";
 }
 
-int dijkstra(int start, int end) {   	// ´ÙÀÍ½ºÆ®¶ó ¾Ë°í¸®Áò
+int dijkstra(int start, int end) {   	// ë‹¤ìµìŠ¤íŠ¸ë¼ ì•Œê³ ë¦¬ì¦˜
     priority_queue<edge, vector<edge>, greater<edge>> pq;
-    pq.push(make_pair(0, start));	// ºñ¿ë ±âÁØ Á¤·ÄÀ» À§ÇØ µ¥ÀÌÅÍ ¼ø¼­¸¦ ºñ¿ë, ³ëµå·Î ¼³Á¤
+    pq.push(make_pair(0, start));	// ë¹„ìš© ê¸°ì¤€ ì •ë ¬ì„ ìœ„í•´ ë°ì´í„° ìˆœì„œë¥¼ ë¹„ìš©, ë…¸ë“œë¡œ ì„¤ì •
     dist[start] = 0;
     while (!pq.empty()) {
         edge nowNode = pq.top();
@@ -49,8 +49,8 @@ int dijkstra(int start, int end) {   	// ´ÙÀÍ½ºÆ®¶ó ¾Ë°í¸®Áò
         int now = nowNode.second;
         if (!visited[now]) {
             visited[now] = true;
-            for (edge n : mlist[now]) { // ¼±ÅÃ³ëµå + ºñ¿ë < Å¸ÄÏ³ëµåÀÎ °æ¿ì °ªÀ» °»½ÅÇÏ´Â ºÎºĞ
-                if (!visited[n.first] && dist[n.first] > dist[now] + n.second) {
+            for (edge n : mlist[now]) { // ì„ íƒë…¸ë“œ + ë¹„ìš© < íƒ€ì¼“ë…¸ë“œì¸ ê²½ìš° ê°’ì„ ê°±ì‹ í•˜ëŠ” ë¶€ë¶„
+                if (dist[n.first] > dist[now] + n.second) {
                     dist[n.first] = dist[now] + n.second;
                     pq.push(make_pair(dist[n.first], n.first));
                 }
