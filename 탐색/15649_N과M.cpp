@@ -9,9 +9,7 @@ void backtracking(int length);
 int main() {
     cin >> N >> M;
     backtracking(0);
-    return 0;
 }
-
 
 void backtracking(int length) {
     if (length == M) { // 길이가 M인 수열이 만들어진 경우
