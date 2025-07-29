@@ -16,26 +16,26 @@ int main()
     int N, M;
     cin >> N >> M;
     int dosi[201][201];
-    for (int i = 1; i <= N; i++) { 	// µµ½Ã ¿¬°á µ¥ÀÌÅÍ ÀúÀå
+    for (int i = 1; i <= N; i++) { 	// ë„ì‹œ ì—°ê²° ë°ì´í„° ì €ìž¥
         for (int j = 1; j <= N; j++) {
             cin >> dosi[i][j];
         }
     }
     int route[1001];
-    for (int i = 1; i <= M; i++) { 	//¿©Çà µµ½Ã Á¤º¸ ÀúÀå
+    for (int i = 1; i <= M; i++) { 	//ì—¬í–‰ ë„ì‹œ ì •ë³´ ì €ìž¥
         cin >> route[i];
     }
     parent.resize(N + 1);
-    for (int i = 1; i <= N; i++) { 	// ´ëÇ¥ ³ëµå¸¦ ÀÚ±â ÀÚ½ÅÀ¸·Î ÃÊ±âÈ­
+    for (int i = 1; i <= N; i++) { 	// ëŒ€í‘œ ë…¸ë“œë¥¼ ìžê¸° ìžì‹ ìœ¼ë¡œ ì´ˆê¸°í™”
         parent[i] = i;
     }
-    for (int i = 1; i <= N; i++) { 	// ÀÎÁ¢Çà·Ä Å½»ö¿¡¼­ µµ½Ã°¡ ¿¬°áµÇ¾î ÀÖÀ¸¸é À¯´Ï¿Â ½ÇÇà
+    for (int i = 1; i <= N; i++) { 	// ì¸ì ‘í–‰ë ¬ íƒìƒ‰ì—ì„œ ë„ì‹œê°€ ì—°ê²°ë˜ì–´ ìžˆìœ¼ë©´ ìœ ë‹ˆì˜¨ ì‹¤í–‰
         for (int j = 1; j <= N; j++) {
             if (dosi[i][j] == 1) unionfunc(i, j);
         }
     }
 
-    // ¿©Çà °èÈ¹ µµ½ÃµéÀÌ ÇÏ³ªÀÇ ´ëÇ¥ µµ½Ã·Î ¿¬°áµÇ¾î ÀÖ´ÂÁö È®ÀÎ
+    // ì—¬í–‰ ê³„íš ë„ì‹œë“¤ì´ í•˜ë‚˜ì˜ ëŒ€í‘œ ë„ì‹œë¡œ ì—°ê²°ë˜ì–´ ìžˆëŠ”ì§€ í™•ì¸
     int index = find(route[1]);
     bool connect = true;
     for (int i = 2; i <= M; i++) {
@@ -47,16 +47,16 @@ int main()
     }
     if (connect) cout << "YES" << "\n";
 }
-void unionfunc(int a, int b) {	 // union ¿¬»ê : ¹Ù·Î ¿¬°áÀÌ ¾Æ´Ñ ´ëÇ¥ ³ëµå³¢¸® ¿¬°áÇÏ¿© ÁÜ
+void unionfunc(int a, int b) {	 // union ì—°ì‚° : ë°”ë¡œ ì—°ê²°ì´ ì•„ë‹Œ ëŒ€í‘œ ë…¸ë“œë¼ë¦¬ ì—°ê²°í•˜ì—¬ ì¤Œ
     a = find(a);
     b = find(b);
     if (a != b) {
         parent[b] = a;
     }
 }
-int find(int a) { 	// find ¿¬»ê : ´ëÇ¥ ³ëµå¸¦ ¸®ÅÏ
+int find(int a) { 	// find ì—°ì‚° : ëŒ€í‘œ ë…¸ë“œë¥¼ ë¦¬í„´
     if (a == parent[a])
         return a;
     else
-        return parent[a] = find(parent[a]); 	// Àç±ÍÇÔ¼öÀÇ ÇüÅÂ·Î ±¸Çö
+        return parent[a] = find(parent[a]); 	// ìž¬ê·€í•¨ìˆ˜ì˜ í˜•íƒœë¡œ êµ¬í˜„
 }
