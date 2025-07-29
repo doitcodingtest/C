@@ -15,7 +15,7 @@ int main()
 	for (int i = 1; i <= suNo; i++){
 		int temp;
 		cin >> temp;
-		S[i] = S[i-1] + temp;	//╠╦╟ёгу ╠╦го╠Б
+		S[i] = S[i-1] + temp;	//б╠б╦б╟бёц┤ц∙ б╠б╦ц┤ц▐б╠ц╒
 	}
 
 	for (int i = 0; i < quizNo; i++) {
