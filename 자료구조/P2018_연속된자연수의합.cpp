@@ -14,16 +14,16 @@ int main()
     int end_index = 1;
     int sum = 1;
     while (end_index != N) {
-        if (sum == N) {         //  ´äÀ» Ã£Àº °æ¿ì
+        if (sum == N) {         //  ë‹µì„ ì°¾ì€ ê²½ìš°
             count++;
             end_index++;
             sum = sum + end_index;
         }
-        else if (sum > N) {   // ÇöÀç ÇÕÀÌ ´äº¸´Ù Å« °æ¿ì
+        else if (sum > N) {   // í˜„ì¬ í•©ì´ ë‹µë³´ë‹¤ í° ê²½ìš°
             sum = sum - start_index;
             start_index++;
         }
-        else {                // ÇöÀç ÇÕÀÌ ´äº¸´Ù ÀÛÀº °æ¿ì
+        else {                // í˜„ì¬ í•©ì´ ë‹µë³´ë‹¤ ì‘ì€ ê²½ìš°
             end_index++;
             sum = sum + end_index;
         }
