@@ -28,7 +28,7 @@ int main()
 
     int count = 0;
     for (int i = 1; i < N + 1; i++) {
-        if (!visited[i]) { // ¹Ì ¹æ¹®ÇÑ ³ëµå°¡ ¾øÀ» ¶§±îÁö ¹İº¹
+        if (!visited[i]) { // ë¯¸ ë°©ë¬¸í•œ ë…¸ë“œê°€ ì—†ì„ ë•Œê¹Œì§€ ë°˜ë³µ
             count++;
             DFS(i);
         }
@@ -42,7 +42,7 @@ void DFS(int v) {
     }
     visited[v] = true;
     for (int i : A[v]) {
-        if (visited[i] == false) { // ¿¬°á Á¤Á¡ Áß ¹æ¹®ÇÏÁö ¾Ê¾Ò´ø ³ëµå¸¸ Å½»öÇÔ
+        if (visited[i] == false) { // ì—°ê²° ì •ì  ì¤‘ ë°©ë¬¸í•˜ì§€ ì•Šì•˜ë˜ ë…¸ë“œë§Œ íƒìƒ‰í•¨
             DFS(i);
         }
     }
