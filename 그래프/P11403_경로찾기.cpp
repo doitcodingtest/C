@@ -13,14 +13,14 @@ int main()
 
     cin >> N;
 
-    for (int i = 0; i < N; i++) { // ÀÎÁ¢ Çà·Ä ÃÊ±âÈ­
+    for (int i = 0; i < N; i++) { // ì¸ì ‘ í–‰ë ¬ ì´ˆê¸°í™”
         for (int j = 0; j < N; j++) {
             cin >> mdistance[i][j];
         }
     }
 
     
-    for (int k = 0; k < N; k++) { // ÇÃ·ÎÀÌµå ¿ö¼È ¾Ë°í¸®Áò ¼öÇà
+    for (int k = 0; k < N; k++) { // í”Œë¡œì´ë“œ ì›Œì…œ ì•Œê³ ë¦¬ì¦˜ ìˆ˜í–‰
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 if (mdistance[i][k] == 1 && mdistance[k][j] == 1) mdistance[i][j] = 1;
