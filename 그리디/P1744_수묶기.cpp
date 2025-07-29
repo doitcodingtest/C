@@ -10,12 +10,12 @@ int main()
 
     int N;
     cin >> N;
-    priority_queue<int> plusPq;                               // ³»¸²Â÷¼ø Á¤·Ä
-    priority_queue<int, vector<int>, greater<int>> minusPq;   // ¿À¸§Â÷¼ø Á¤·Ä
+    priority_queue<int> plusPq;                               // ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬
+    priority_queue<int, vector<int>, greater<int>> minusPq;   // ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
 
     int one = 0;
     int zero = 0;
-    for (int i = 0; i < N; i++) { // 4°³ÀÇ ±×·ìÀ¸·Î ºÐ¸®ÇÏ¿© ÀúÀå
+    for (int i = 0; i < N; i++) { // 4ê°œì˜ ê·¸ë£¹ìœ¼ë¡œ ë¶„ë¦¬í•˜ì—¬ ì €ìž¥
         int data;
         cin >> data;
         if (data > 1) {
@@ -32,7 +32,7 @@ int main()
         }
     }
     int sum = 0;
-    // ¾ç¼öÃ³¸®
+    // ì–‘ìˆ˜ì²˜ë¦¬
     while (plusPq.size() > 1) {
         int first = plusPq.top();
         plusPq.pop();
@@ -44,7 +44,7 @@ int main()
         sum = sum + plusPq.top();
         plusPq.pop();
     }
-    // À½¼öÃ³¸®
+    // ìŒìˆ˜ì²˜ë¦¬
     while (minusPq.size() > 1) {
         int first = minusPq.top();
         minusPq.pop();
@@ -58,7 +58,7 @@ int main()
             minusPq.pop();
         }
     }
-    // 1Ã³¸®
+    // 1ì²˜ë¦¬
     sum = sum + one;
 
     cout << sum << "\n";
