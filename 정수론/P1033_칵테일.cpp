@@ -26,7 +26,7 @@ int main()
         cin >> a >> b >> p >> q;
         A[a].push_back(make_tuple(b, p, q));
         A[b].push_back(make_tuple(a, q, p));
-        lcm *= (p * q / gcd(p, q)); // µÎ ¼öÀÇ ÃÖ¼Ò °ø¹è¼ö´Â µÎ¼öÀÇ °öÀ» ÃÖ´ë °ø¾à¼ö·Î ³ª´« °ÍÀÔ´Ï´Ù.
+        lcm *= (p * q / gcd(p, q)); // ë‘ ìˆ˜ì˜ ìµœì†Œ ê³µë°°ìˆ˜ëŠ” ë‘ìˆ˜ì˜ ê³±ì„ ìµœëŒ€ ê³µì•½ìˆ˜ë¡œ ë‚˜ëˆˆ ê²ƒì…ë‹ˆë‹¤.
     }
     D[0] = lcm;
     DFS(0);
@@ -46,12 +46,12 @@ long gcd(long a, long b) {
         return gcd(b, a % b);
 }
 
-void DFS(int node) { // DFS±¸Çö
+void DFS(int node) { // DFSêµ¬í˜„
     visited[node] = true;
     for (tuple<int, int, int> i : A[node]) {
         int next = get<0>(i);
         if (!visited[next]) {
-            D[next] = D[node] * get<2>(i) / get<1>(i); //ÁÖ¾îÁø ºñÀ²·Î ´ÙÀ½ ³ëµå °ª ¾÷µ¥ÀÌÆ®
+            D[next] = D[node] * get<2>(i) / get<1>(i); //ì£¼ì–´ì§„ ë¹„ìœ¨ë¡œ ë‹¤ìŒ ë…¸ë“œ ê°’ ì—…ë°ì´íŠ¸
             DFS(next);
         }
     }
