@@ -6,7 +6,7 @@ void munion(int a, int b);
 int find(int a);
 
 static vector<int> parent;
-typedef struct Edge 	// ¿¡ÁöÁ¤º¸ struct »ý¼º, °¡ÁßÄ¡ °ª ±âÁØ ¿À¸§Â÷¼ø Á¤·Ä·Î ¼³Á¤
+typedef struct Edge 	// ì—ì§€ì •ë³´ struct ìƒì„±, ê°€ì¤‘ì¹˜ ê°’ ê¸°ì¤€ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬ë¡œ ì„¤ì •
 {
     int s, e, v;
     bool operator> (const Edge& temp) const {
@@ -22,7 +22,7 @@ int main()
 
     int N, M;
     cin >> N >> M;
-    priority_queue<Edge, vector<Edge>, greater<Edge>> pq;   // ¿À¸§Â÷¼ø Á¤·Ä
+    priority_queue<Edge, vector<Edge>, greater<Edge>> pq;   // ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
     parent.resize(N + 1);
     for (int i = 0; i <= N; i++) {
         parent[i] = i;
@@ -37,7 +37,7 @@ int main()
     while (useEdge < N - 1) {
         Edge now = pq.top();
         pq.pop();
-        if (find(now.s) != find(now.e)) // °°Àº ºÎ¸ð°¡ ¾Æ´Ï¶ó¸é -> ¿¬°áÇØµµ »çÀÌÅ¬ÀÌ »ý±âÁö ¾Ê´Â´Ù¸é
+        if (find(now.s) != find(now.e)) // ê°™ì€ ë¶€ëª¨ê°€ ì•„ë‹ˆë¼ë©´ -> ì—°ê²°í•´ë„ ì‚¬ì´í´ì´ ìƒê¸°ì§€ ì•ŠëŠ”ë‹¤ë©´
         {
             munion(now.s, now.e);
             result = result + now.v;
@@ -48,16 +48,16 @@ int main()
 
 }
 
-void munion(int a, int b) { 	// union ¿¬»ê : ´ëÇ¥ ³ëµå³¢¸® ¿¬°áÇÏ¿© ÁÜ
+void munion(int a, int b) { 	// union ì—°ì‚° : ëŒ€í‘œ ë…¸ë“œë¼ë¦¬ ì—°ê²°í•˜ì—¬ ì¤Œ
     a = find(a);
     b = find(b);
     if (a != b) {
         parent[b] = a;
     }
 }
-int find(int a) { 	// find ¿¬»ê
+int find(int a) { 	// find ì—°ì‚°
     if (a == parent[a])
         return a;
     else
-        return parent[a] = find(parent[a]); 	// Àç±ÍÇÔ¼öÀÇ ÇüÅÂ·Î ±¸Çö -> °æ·Î ¾ÐÃà ºÎºÐ
+        return parent[a] = find(parent[a]); 	// ìž¬ê·€í•¨ìˆ˜ì˜ í˜•íƒœë¡œ êµ¬í˜„ -> ê²½ë¡œ ì••ì¶• ë¶€ë¶„
 }
