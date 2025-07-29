@@ -16,14 +16,14 @@ int main()
         cin >> A[i];
     }
 
-    sort(A.begin(), A.end()); //A¹è¿­ Á¤·Ä O(nlogn)½Ã°£ º¹Àâµµ
+    sort(A.begin(), A.end()); //Aë°°ì—´ ì •ë ¬ O(nlogn)ì‹œê°„ ë³µì¡ë„
 
     cin >> M;
     for (int i = 0; i < M; i++) {
         bool find = false;
         int target;
         cin >> target;
-        // ÀÌÁø Å½»ö ½ÃÀÛ
+        // ì´ì§„ íƒìƒ‰ ì‹œì‘
         int start = 0;
         int end = A.size() - 1;
         while (start <= end) {
