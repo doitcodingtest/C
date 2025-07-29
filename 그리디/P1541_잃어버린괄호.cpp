@@ -18,15 +18,15 @@ int main()
     for (int i = 0; i < str.size(); i++) {
         int temp = mySum(str[i]);
         if (i == 0)
-            answer = answer + temp; // Á¦ÀÏ ¾Õ¿¡ °Í¸¸ ´õÇØÁÖ°í
+            answer = answer + temp; // ì œì¼ ì•ì— ê²ƒë§Œ ë”í•´ì£¼ê³ 
         else
-            answer = answer - temp; // µÚ¿¡ ºÎºĞÀº ´õÇÑ °ªµéÀ» »©ÁÜ
+            answer = answer - temp; // ë’¤ì— ë¶€ë¶„ì€ ë”í•œ ê°’ë“¤ì„ ë¹¼ì¤Œ
     }
 
     cout << answer << "\n";
 }
 
-//¹®ÀÚ¿­ Æ¯Á¤ ±¸ºĞÀÚ·Î Àß¶ó º¤ÅÍ¿¡ ÀúÀåÇÏ´Â ÇÔ¼ö 
+//ë¬¸ìì—´ íŠ¹ì • êµ¬ë¶„ìë¡œ ì˜ë¼ ë²¡í„°ì— ì €ì¥í•˜ëŠ” í•¨ìˆ˜ 
 vector<string> split(string input, char delimiter) {
     vector<string> result;
     stringstream mystream(input);
@@ -39,7 +39,7 @@ vector<string> split(string input, char delimiter) {
     return result;
 }
 
-int mySum(string a) { // ³ª´²Áø ±×·ìÀÇ ´õÇÏ±â ¿¬»ê ¼öÇà ÇÔ¼ö
+int mySum(string a) { // ë‚˜ëˆ ì§„ ê·¸ë£¹ì˜ ë”í•˜ê¸° ì—°ì‚° ìˆ˜í–‰ í•¨ìˆ˜
     int sum = 0;
     vector<string> temp = split(a, '+');
     for (int i = 0; i < temp.size(); i++) {
