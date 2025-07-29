@@ -33,7 +33,7 @@ int main()
             A[S].push_back(E);
             A[E].push_back(S);
         }
-        // ÁÖ¾îÁø ±×·¡ÇÁ°¡ ÇÏ³ª·Î ¿¬°áµÇ¾î ÀÖ´Ù´Â º¸ÀåÀÌ ¾øÀ¸¹Ç·Î ¸ðµç Á¤Á¡¿¡¼­ ¼öÇà
+        // ì£¼ì–´ì§„ ê·¸ëž˜í”„ê°€ í•˜ë‚˜ë¡œ ì—°ê²°ë˜ì–´ ìžˆë‹¤ëŠ” ë³´ìž¥ì´ ì—†ìœ¼ë¯€ë¡œ ëª¨ë“  ì •ì ì—ì„œ ìˆ˜í–‰
         for (int i = 1; i <= V; i++) {
             if (IsEven)
                 DFS(i);
@@ -54,14 +54,14 @@ int main()
 }
 
 
-void DFS(int node) { 	// DFS±¸Çö
+void DFS(int node) { 	// DFSêµ¬í˜„
     visited[node] = true;
     for (int i : A[node]) {
         if (!visited[i]) {
-            check[i] = (check[node] + 1) % 2; 	// ÀÎÁ¢ÇÑ Á¤Á¡Àº °°Àº ÁýÇÕÀÌ ¾Æ´Ï¹Ç·Î ÀÌÀü Á¤Á¡°ú ´Ù¸¥ ÁýÇÕÀ¸·Î Ã³¸®
+            check[i] = (check[node] + 1) % 2; 	// ì¸ì ‘í•œ ì •ì ì€ ê°™ì€ ì§‘í•©ì´ ì•„ë‹ˆë¯€ë¡œ ì´ì „ ì •ì ê³¼ ë‹¤ë¥¸ ì§‘í•©ìœ¼ë¡œ ì²˜ë¦¬
             DFS(i);
         }
-        else if (check[node] == check[i]) { 	// ÀÌ¹Ì ¹æ¹®ÇÑ Á¤Á¡ÀÌ ÇöÀç ³» Á¤Á¡°ú °°Àº ÁýÇÕÀÌ¸é ÀÌºÐ ±×·¡ÇÁ°¡ ¾Æ´Ô
+        else if (check[node] == check[i]) { 	// ì´ë¯¸ ë°©ë¬¸í•œ ì •ì ì´ í˜„ìž¬ ë‚´ ì •ì ê³¼ ê°™ì€ ì§‘í•©ì´ë©´ ì´ë¶„ ê·¸ëž˜í”„ê°€ ì•„ë‹˜
             IsEven = false;
         }
     }
