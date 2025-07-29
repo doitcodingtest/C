@@ -41,15 +41,15 @@ int main()
         if (m_distance[Max] < m_distance[i])
             Max = i;
     }
-    fill(m_distance.begin(), m_distance.end(), 0); // °Å¸® ¹è¿­ ÃÊ±âÈ­
-    fill(visited.begin(), visited.end(), false); // ¹æ¹® ¹è¿­ ÃÊ±âÈ­
+    fill(m_distance.begin(), m_distance.end(), 0); // ê±°ë¦¬ ë°°ì—´ ì´ˆê¸°í™”
+    fill(visited.begin(), visited.end(), false); // ë°©ë¬¸ ë°°ì—´ ì´ˆê¸°í™”
     BFS(Max);
     sort(m_distance.begin(), m_distance.end());
     cout << m_distance[N] << "\n";
 }
 
 
-void BFS(int index) {  // BFS±¸Çö
+void BFS(int index) {  // BFSêµ¬í˜„
     queue<int> myqueue;
     myqueue.push(index);
     visited[index] = true;
