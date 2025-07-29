@@ -19,9 +19,9 @@ int main()
 
     mdistance.resize(N);
     cityMoney.resize(N);
-    std::fill(mdistance.begin(), mdistance.end(), LONG_MIN); // ÃÖ´Ü°Å¸® ¹è¿­ ÃÊ±âÈ­
+    std::fill(mdistance.begin(), mdistance.end(), LONG_MIN); // ìµœë‹¨ê±°ë¦¬ ë°°ì—´ ì´ˆê¸°í™”
 
-    for (int i = 0; i < M; i++) { // ¿¡Áö ¸®½ºÆ®¿¡ µ¥ÀÌÅÍ ÀúÀåÇÏ±â
+    for (int i = 0; i < M; i++) { // ì—ì§€ ë¦¬ìŠ¤íŠ¸ì— ë°ì´í„° ì €ì¥í•˜ê¸°
         int start, end, price;
         cin >> start >> end >> price;
         edges.push_back(make_tuple(start, end, price));
@@ -32,26 +32,26 @@ int main()
     }
 
     
-    mdistance[sCity] = cityMoney[sCity]; // º¯ÇüµÈ º§¸¸Æ÷µå ¾Ë°í¸®Áò ¼öÇà
-    for (int i = 0; i <= N + 100; i++) { // ¾ç¼ö½ÎÀÌÅ¬ÀÌ ÀüÆÄµÇµµ·Ï ÃæºĞÈ÷ Å« ¼ö·Î ¹İº¹ÇÏ±â
+    mdistance[sCity] = cityMoney[sCity]; // ë³€í˜•ëœ ë²¨ë§Œí¬ë“œ ì•Œê³ ë¦¬ì¦˜ ìˆ˜í–‰
+    for (int i = 0; i <= N + 100; i++) { // ì–‘ìˆ˜ì‹¸ì´í´ì´ ì „íŒŒë˜ë„ë¡ ì¶©ë¶„íˆ í° ìˆ˜ë¡œ ë°˜ë³µí•˜ê¸°
         for (int j = 0; j < M; j++) {
             int start = get<0>(edges[j]);
             int end = get<1>(edges[j]);
             int price = get<2>(edges[j]);
-            if (mdistance[start] == LONG_MIN) continue; // ½ÃÀÛ³ëµå°¡ ¹Ì¹æ¹® ³ëµåÀÌ¸é continue
-            // ½ÃÀÛ ³ëµå°¡ ¾ç¼ö»çÀÌÅ¬¿¡ ¿¬°áµÈ ³ëµå¶ó¸é Á¾·á ³ëµåµµ ¿¬°á ³ëµå·Î °»½Å
+            if (mdistance[start] == LONG_MIN) continue; // ì‹œì‘ë…¸ë“œê°€ ë¯¸ë°©ë¬¸ ë…¸ë“œì´ë©´ continue
+            // ì‹œì‘ ë…¸ë“œê°€ ì–‘ìˆ˜ì‚¬ì´í´ì— ì—°ê²°ëœ ë…¸ë“œë¼ë©´ ì¢…ë£Œ ë…¸ë“œë„ ì—°ê²° ë…¸ë“œë¡œ ê°±ì‹ 
             else if (mdistance[start] == LONG_MAX)
                 mdistance[end] = LONG_MAX;
-            // ´õ ¸¹Àº µ·À» ¹ú¼ö ÀÖ´Â »õ·Î¿î °æ·Î°¡ ¹ß°ßµÈ °æ¿ì »õ·Î¿î °æ·Î °ªÀ¸·Î °»½Å
+            // ë” ë§ì€ ëˆì„ ë²Œìˆ˜ ìˆëŠ” ìƒˆë¡œìš´ ê²½ë¡œê°€ ë°œê²¬ëœ ê²½ìš° ìƒˆë¡œìš´ ê²½ë¡œ ê°’ìœ¼ë¡œ ê°±ì‹ 
             else if (mdistance[end] < mdistance[start] + cityMoney[end] - price) {
                 mdistance[end] = mdistance[start] + cityMoney[end] - price;
-                // N-1 ¹İº¹ ÀÌÈÄ °»½ÅµÇ´Â Á¾·á ³ëµå´Â ¾ç¼ö»çÀÌÅ¬ ¿¬°á ³ëµå·Î º¯°æ
+                // N-1 ë°˜ë³µ ì´í›„ ê°±ì‹ ë˜ëŠ” ì¢…ë£Œ ë…¸ë“œëŠ” ì–‘ìˆ˜ì‚¬ì´í´ ì—°ê²° ë…¸ë“œë¡œ ë³€ê²½
                 if (i >= N - 1)
                     mdistance[end] = LONG_MAX;
             }
         }
     }
-    if (mdistance[eCity] == LONG_MIN) cout << "gg"<< "\n"; // µµÂø ºÒ°¡´É
-    else if (mdistance[eCity] == LONG_MAX) cout << "Gee" << "\n"; // ¾ç¼ö»çÀÌÅ¬ ¿¬°á
-    else cout << mdistance[eCity] << "\n"; //±× ÀÌ¿ÜÀÇ °æ¿ì
+    if (mdistance[eCity] == LONG_MIN) cout << "gg"<< "\n"; // ë„ì°© ë¶ˆê°€ëŠ¥
+    else if (mdistance[eCity] == LONG_MAX) cout << "Gee" << "\n"; // ì–‘ìˆ˜ì‚¬ì´í´ ì—°ê²°
+    else cout << mdistance[eCity] << "\n"; //ê·¸ ì´ì™¸ì˜ ê²½ìš°
 }
