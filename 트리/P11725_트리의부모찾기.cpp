@@ -29,7 +29,7 @@ int main()
         tree[n2].push_back(n1);
     }
 
-    DFS(1);	// ·çÆ® ³ëµå¿¡¼­ DFS ½ÇÇà
+    DFS(1);	// ë£¨íŠ¸ ë…¸ë“œì—ì„œ DFS ì‹¤í–‰
     for (int i = 2; i <= N; i++) {
         cout << answer[i] << "\n";
     }
@@ -39,7 +39,7 @@ void DFS(int number) {
     visited[number] = true;
     for (int i : tree[number]) {
         if (!visited[i]) {
-            answer[i] = number;	// ºÎ¸ğ³ëµå¸¦ Á¤´ä ¹è¿­¿¡ ÀúÀåÇÏ±â
+            answer[i] = number;	// ë¶€ëª¨ë…¸ë“œë¥¼ ì •ë‹µ ë°°ì—´ì— ì €ì¥í•˜ê¸°
             DFS(i);
         }
     }
