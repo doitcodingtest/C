@@ -26,7 +26,7 @@ int main()
     std::fill(visited.begin(), visited.end(), false);
     mlist.resize(V + 1);
 
-    for (int i = 0; i < E; i++) { // °¡ÁßÄ¡°¡ ÀÖ´Â ÀÎÁ¢ ¸®½ºÆ® ÃÊ±âÈ­
+    for (int i = 0; i < E; i++) { // ê°€ì¤‘ì¹˜ê°€ ìˆëŠ” ì¸ì ‘ ë¦¬ìŠ¤íŠ¸ ì´ˆê¸°í™”
         int u, v, w;
         cin >> u >> v >> w;
         mlist[u].push_back(make_pair(v, w));
@@ -38,19 +38,19 @@ int main()
         edge current = q.top();
         q.pop();
         int c_v = current.second;
-        if (visited[c_v]) continue; // ±â ¹æ¹® ³ëµå´Â ´Ù½Ã Å¥¿¡ ³ÖÁö ¾Ê½À´Ï´Ù.
+        if (visited[c_v]) continue; // ê¸° ë°©ë¬¸ ë…¸ë“œëŠ” ë‹¤ì‹œ íì— ë„£ì§€ ì•ŠìŠµë‹ˆë‹¤.
         visited[c_v] = true;
         for (int i = 0; i < mlist[c_v].size(); i++) {
             edge tmp = mlist[c_v][i];
             int next = tmp.first;
             int value = tmp.second;
-            if (mdistance[next] > mdistance[c_v] + value) { // ÃÖ¼Ò °Å¸®·Î ¾÷µ¥ÀÌÆ®
+            if (mdistance[next] > mdistance[c_v] + value) { // ìµœì†Œ ê±°ë¦¬ë¡œ ì—…ë°ì´íŠ¸
                 mdistance[next] = value + mdistance[c_v];
                 q.push(make_pair(mdistance[next], next));
             }
         }
     }
-    for (int i = 1; i <= V; i++) { // °Å¸® ¹è¿­ Ãâ·Â
+    for (int i = 1; i <= V; i++) { // ê±°ë¦¬ ë°°ì—´ ì¶œë ¥
         if (visited[i])
             cout << mdistance[i] << "\n";
         else
