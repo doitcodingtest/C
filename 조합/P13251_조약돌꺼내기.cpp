@@ -24,6 +24,6 @@ int main()
         ans += probability[i];
     }
     cout << fixed;
-    cout.precision(9); // ¿ÀÂ÷ ¹üÀ§³» Ãâ·ÂÀ» À§ÇÑ ¼Ò¼öÁ¡ ÀÚ¸®¼ö ¼³Á¤
+    cout.precision(9); // ì˜¤ì°¨ ë²”ìœ„ë‚´ ì¶œë ¥ì„ ìœ„í•œ ì†Œìˆ˜ì  ìë¦¬ìˆ˜ ì„¤ì •
     cout << ans;
 }
