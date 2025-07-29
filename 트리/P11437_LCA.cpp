@@ -23,16 +23,16 @@ int main()
     depth.resize(N + 1);
     parent.resize(N + 1);
     visited.resize(N + 1);
-    for (int i = 0; i < N - 1; i++) { // AÀÎÁ¢¸®½ºÆ®¿¡ ±×·¡ÇÁ µ¥ÀÌÅÍ ÀúÀå
+    for (int i = 0; i < N - 1; i++) { // Aì¸ì ‘ë¦¬ìŠ¤íŠ¸ì— ê·¸ë˜í”„ ë°ì´í„° ì €ì¥
         int s, e;
         cin >> s >> e;
         tree[s].push_back(e);
         tree[e].push_back(s);
     }
-    BFS(1); // depth¸¦ BFS¸¦ ÅëÇÏ¿© ±¸ÇÏ±â
+    BFS(1); // depthë¥¼ BFSë¥¼ í†µí•˜ì—¬ êµ¬í•˜ê¸°
     cin >> M;
     for (int i = 0; i < M; i++) {
-        // °øÅë Á¶»óÀ» ±¸ÇÒ µÎ ³ëµå
+        // ê³µí†µ ì¡°ìƒì„ êµ¬í•  ë‘ ë…¸ë“œ
         int a, b;
         cin >> a >> b;
         int LCA = excuteLCA(a, b);
@@ -46,16 +46,16 @@ int excuteLCA(int a, int b) {
         a = b;
         b = temp;
     }
-    while (depth[a] != depth[b]) { // µÎ ³ëµåÀÇ Depth ¸ÂÃçÁÖ±â
+    while (depth[a] != depth[b]) { // ë‘ ë…¸ë“œì˜ Depth ë§ì¶°ì£¼ê¸°
         a = parent[a];
     }
-    while (a != b) { // °°Àº Á¶»óÀÌ ³ª¿Ã ¶§±îÁö ÇÑÄ­¾¿ ¿Ã·ÁÁÖ±â
+    while (a != b) { // ê°™ì€ ì¡°ìƒì´ ë‚˜ì˜¬ ë•Œê¹Œì§€ í•œì¹¸ì”© ì˜¬ë ¤ì£¼ê¸°
         a = parent[a];
         b = parent[b];
     }
     return a;
 }
-// BFS±¸Çö
+// BFSêµ¬í˜„
 void BFS(int node) {
     queue<int> myqueue;
     myqueue.push(node);
@@ -70,8 +70,8 @@ void BFS(int node) {
             if (!visited[next]) {
                 visited[next] = true;
                 myqueue.push(next);
-                parent[next] = now_node;  //ºÎ¸ğ ³ëµå ÀúÀå
-                depth[next] = level; //³ëµå depth ÀúÀå
+                parent[next] = now_node;  //ë¶€ëª¨ ë…¸ë“œ ì €ì¥
+                depth[next] = level; //ë…¸ë“œ depth ì €ì¥
             }
         }
         count++;
