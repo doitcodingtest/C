@@ -15,7 +15,7 @@ int main()
 
     vector < vector <pair<int, int>> > A;
     vector < vector <pair<int, int>> > reverseA;
-    vector <int> indegree;     // ÁøÀÔÂ÷¼ö¹è¿­
+    vector <int> indegree;     // ì§„ì…ì°¨ìˆ˜ë°°ì—´
     A.resize(N + 1);
     reverseA.resize(N + 1);
     indegree.resize(N + 1);
@@ -24,14 +24,14 @@ int main()
         int S, E, V;
         cin >> S >> E >> V;
         A[S].push_back(make_pair(E, V));
-        reverseA[E].push_back(make_pair(S, V));  // ¿ª¹æÇâ °£¼± Á¤º¸ ÀúÀå
-        indegree[E]++;	 // ÁøÀÔ Â÷¼ö ¹è¿­ ÃÊ±âÈ­
+        reverseA[E].push_back(make_pair(S, V));  // ì—­ë°©í–¥ ê°„ì„  ì •ë³´ ì €ì¥
+        indegree[E]++;	 // ì§„ì… ì°¨ìˆ˜ ë°°ì—´ ì´ˆê¸°í™”
     }
 
     int startDosi, endDosi;
     cin >> startDosi >> endDosi;
 
-    queue<int> mqueue;  	// À§»ó Á¤·Ä ¼öÇà
+    queue<int> mqueue;  	// ìœ„ìƒ ì •ë ¬ ìˆ˜í–‰
     mqueue.push(startDosi);
     vector <int> result;
     result.resize(N + 1);
@@ -47,7 +47,7 @@ int main()
             }
         }
     }
-    // À§»ó Á¤·Ä reverse
+    // ìœ„ìƒ ì •ë ¬ reverse
     int resultCount = 0;
     vector <bool> visited;
     visited.resize(N + 1);
@@ -58,9 +58,9 @@ int main()
         int now = rqueue.front();
         rqueue.pop();
         for (pair<int, int> next : reverseA[now]) {
-            if (result[next.first] + next.second == result[now]) { 	// 1ºĞµµ ½¬Áö ¾Ê´Â µµ·Î Ã¼Å©
+            if (result[next.first] + next.second == result[now]) { 	// 1ë¶„ë„ ì‰¬ì§€ ì•ŠëŠ” ë„ë¡œ ì²´í¬
                 resultCount++;
-                if (visited[next.first] == false) { 	// Áßº¹ Ä«¿îÆ® ¹æÁö¸¦ À§ÇØ ±â ¹æ¹® ³ëµå Á¦¿Ü
+                if (visited[next.first] == false) { 	// ì¤‘ë³µ ì¹´ìš´íŠ¸ ë°©ì§€ë¥¼ ìœ„í•´ ê¸° ë°©ë¬¸ ë…¸ë“œ ì œì™¸
                     visited[next.first] = true;
                     rqueue.push(next.first);
                 }
