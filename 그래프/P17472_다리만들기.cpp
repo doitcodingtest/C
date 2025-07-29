@@ -15,7 +15,7 @@ static int N, M, sNum;
 static vector < vector <pair<int, int>> > sumlist;
 static vector <pair<int, int>>  mlist;
 
-typedef struct Edge 	// ¿¡ÁöÁ¤º¸ struct »ı¼º, °¡ÁßÄ¡ °ª ±âÁØ ¿À¸§Â÷¼ø Á¤·Ä·Î ¼³Á¤
+typedef struct Edge 	// ì—ì§€ì •ë³´ struct ìƒì„±, ê°€ì¤‘ì¹˜ ê°’ ê¸°ì¤€ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬ë¡œ ì„¤ì •
 {
     int s, e, v;
     bool operator> (const Edge& temp) const {
@@ -23,7 +23,7 @@ typedef struct Edge 	// ¿¡ÁöÁ¤º¸ struct »ı¼º, °¡ÁßÄ¡ °ª ±âÁØ ¿À¸§Â÷¼ø Á¤·Ä·Î ¼³Á
     }
 }Edge;
 
-static priority_queue<Edge, vector<Edge>, greater<Edge>> pq;   // ¿À¸§Â÷¼ø Á¤·Ä
+static priority_queue<Edge, vector<Edge>, greater<Edge>> pq;   // ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
 
 int main()
 {
@@ -34,12 +34,12 @@ int main()
 
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
-            cin >> map[i][j]; 	// ¸Ê Á¤º¸ ÀúÀå
+            cin >> map[i][j]; 	// ë§µ ì •ë³´ ì €ì¥
         }
     }
     sNum = 1;
 
-    for (int i = 0; i < N; i++) { 	// °¢ ÀÚ¸®¿¡¼­ BFS Å½»öÀ» ÀÌ¿ëÇÏ¿© ¼¶µéÀ» ºĞ¸®ÇÏ¿© Áİ´Ï´Ù.
+    for (int i = 0; i < N; i++) { 	// ê° ìë¦¬ì—ì„œ BFS íƒìƒ‰ì„ ì´ìš©í•˜ì—¬ ì„¬ë“¤ì„ ë¶„ë¦¬í•˜ì—¬ ì¤ë‹ˆë‹¤.
         for (int j = 0; j < M; j++) {
             if (map[i][j] != 0 && visited[i][j] != true) {
                 BFS(i, j);
@@ -49,25 +49,25 @@ int main()
         }
     }
 
-    for (int i = 0; i < sumlist.size(); i++) {	 // ¼¶ÀÇ °¢ ÁöÁ¡¿¡¼­ ¸¸µé ¼ö ÀÖ´Â ¸ğµç °£¼±À» ÀúÀå
+    for (int i = 0; i < sumlist.size(); i++) {	 // ì„¬ì˜ ê° ì§€ì ì—ì„œ ë§Œë“¤ ìˆ˜ ìˆëŠ” ëª¨ë“  ê°„ì„ ì„ ì €ì¥
         vector<pair<int, int>> now = sumlist[i];
         for (int j = 0; j < now.size(); j++) {
             int r = now[j].first;
             int c = now[j].second;
             int now_S = map[r][c];
-            for (int d = 0; d < 4; d++) { 	// 4¹æÇâ °Ë»ö
+            for (int d = 0; d < 4; d++) { 	// 4ë°©í–¥ ê²€ìƒ‰
                 int tempR = dr[d];
                 int tempC = dc[d];
                 int blenght = 0;
                 while (r + tempR >= 0 && r + tempR < N && c + tempC >= 0 && c + tempC < M) {
-                    if (map[r + tempR][c + tempC] == now_S) 	// °°Àº ¼¶ÀÌ¸é °£¼±À» ¸¸µé ¼ö ¾øÀ½
+                    if (map[r + tempR][c + tempC] == now_S) 	// ê°™ì€ ì„¬ì´ë©´ ê°„ì„ ì„ ë§Œë“¤ ìˆ˜ ì—†ìŒ
                         break;
-                    else if (map[r + tempR][c + tempC] != 0) { 	//°°Àº ¼¶ÀÌ ¾Æ´Ï°í ¹Ù´Ù°¡ ¾Æ´Ï¸é 
-                        if (blenght > 1) 	// ´Ù¸¥ ¼¶ -> ±æÀÌ°¡ 1ÀÌ»óÀÏ¶§ °£¼±À¸·Î ´õÇØÁİ´Ï´Ù.
+                    else if (map[r + tempR][c + tempC] != 0) { 	//ê°™ì€ ì„¬ì´ ì•„ë‹ˆê³  ë°”ë‹¤ê°€ ì•„ë‹ˆë©´ 
+                        if (blenght > 1) 	// ë‹¤ë¥¸ ì„¬ -> ê¸¸ì´ê°€ 1ì´ìƒì¼ë•Œ ê°„ì„ ìœ¼ë¡œ ë”í•´ì¤ë‹ˆë‹¤.
                             pq.push(Edge{ now_S, map[r + tempR][c + tempC], blenght });
                         break;
                     }
-                    else 	//¹Ù´ÙÀÌ¸é ´Ù¸®ÀÇ ±æÀÌ¸¦ ¿¬ÀåÇÏ¿© Áİ´Ï´Ù.
+                    else 	//ë°”ë‹¤ì´ë©´ ë‹¤ë¦¬ì˜ ê¸¸ì´ë¥¼ ì—°ì¥í•˜ì—¬ ì¤ë‹ˆë‹¤.
                         blenght++;
                     if (tempR < 0)tempR--;
                     else if (tempR > 0)tempR++;
@@ -84,17 +84,17 @@ int main()
     }
     int useEdge = 0;
     int result = 0;
-    while (!pq.empty()) {  	// ÃÖ¼Ò ½ÅÀå Æ®¸® ¾Ë°í¸®ÁòÀ» ¼öÇàÇÏ¿© Áİ´Ï´Ù.
+    while (!pq.empty()) {  	// ìµœì†Œ ì‹ ì¥ íŠ¸ë¦¬ ì•Œê³ ë¦¬ì¦˜ì„ ìˆ˜í–‰í•˜ì—¬ ì¤ë‹ˆë‹¤.
         Edge now = pq.top();
         pq.pop();
-        if (find(now.s) != find(now.e)) 	// °°Àº ºÎ¸ğ°¡ ¾Æ´Ï¶ó¸é -> ¿¬°á °¡´É
+        if (find(now.s) != find(now.e)) 	// ê°™ì€ ë¶€ëª¨ê°€ ì•„ë‹ˆë¼ë©´ -> ì—°ê²° ê°€ëŠ¥
         {
             munion(now.s, now.e);
             result = result + now.v;
             useEdge++;
         }
     }
-    // ¹è¿­¿¡¼­ ½¬¿î index Ã³¸®¸¦ À§ÇØ sNumÀ» 1ºÎÅÍ ½ÃÀÛÇÏ¿´À¸¹Ç·Î ÇöÀç sNumÀÇ °ªÀÌ ¼¶ÀÇ °³¼öº¸´Ù 1 ¸¹Àº »óÅÂÀÓ ¶§¹®¿¡ 1ÀÛÀº ¼ö°¡ ¾Æ´Ñ 2ÀÛÀº ¼ö¿Í »ç¿ë ¿¡Áö¸¦ ºñ±³ÇÏ¿© Áİ´Ï´Ù. 
+    // ë°°ì—´ì—ì„œ ì‰¬ìš´ index ì²˜ë¦¬ë¥¼ ìœ„í•´ sNumì„ 1ë¶€í„° ì‹œì‘í•˜ì˜€ìœ¼ë¯€ë¡œ í˜„ì¬ sNumì˜ ê°’ì´ ì„¬ì˜ ê°œìˆ˜ë³´ë‹¤ 1 ë§ì€ ìƒíƒœì„ ë•Œë¬¸ì— 1ì‘ì€ ìˆ˜ê°€ ì•„ë‹Œ 2ì‘ì€ ìˆ˜ì™€ ì‚¬ìš© ì—ì§€ë¥¼ ë¹„êµí•˜ì—¬ ì¤ë‹ˆë‹¤. 
     if (useEdge == sNum - 2) {
         cout << result << "\n";
     }
@@ -104,21 +104,21 @@ int main()
 
 }
 
-void munion(int a, int b) { 		// union ¿¬»ê : ´ëÇ¥ ³ëµå³¢¸® ¿¬°áÇÏ¿© ÁÜ
+void munion(int a, int b) { 		// union ì—°ì‚° : ëŒ€í‘œ ë…¸ë“œë¼ë¦¬ ì—°ê²°í•˜ì—¬ ì¤Œ
     a = find(a);
     b = find(b);
     if (a != b) {
         parent[b] = a;
     }
 }
-int find(int a) { 	// find ¿¬»ê
+int find(int a) { 	// find ì—°ì‚°
     if (a == parent[a])
         return a;
     else
-        return parent[a] = find(parent[a]); 	// Àç±ÍÇÔ¼öÀÇ ÇüÅÂ·Î ±¸Çö -> °æ·Î ¾ĞÃà ºÎºĞ
+        return parent[a] = find(parent[a]); 	// ì¬ê·€í•¨ìˆ˜ì˜ í˜•íƒœë¡œ êµ¬í˜„ -> ê²½ë¡œ ì••ì¶• ë¶€ë¶„
 }
 
-void BFS(int i, int j) {	 // BFS¸¦ ÅëÇÏ¿© ¿¬°áµÈ ¼¶À» Ã£¾ÆÁİ´Ï´Ù.
+void BFS(int i, int j) {	 // BFSë¥¼ í†µí•˜ì—¬ ì—°ê²°ëœ ì„¬ì„ ì°¾ì•„ì¤ë‹ˆë‹¤.
     queue<pair<int, int>> myqueue;
     mlist.clear();
     myqueue.push(make_pair(i, j));
@@ -129,11 +129,11 @@ void BFS(int i, int j) {	 // BFS¸¦ ÅëÇÏ¿© ¿¬°áµÈ ¼¶À» Ã£¾ÆÁİ´Ï´Ù.
         int r = myqueue.front().first;
         int c = myqueue.front().second;
         myqueue.pop();
-        for (int d = 0; d < 4; d++) { 	//4¹æÇâ °Ë»ö
+        for (int d = 0; d < 4; d++) { 	//4ë°©í–¥ ê²€ìƒ‰
             int tempR = dr[d];
             int tempC = dc[d];
             while (r + tempR >= 0 && r + tempR < N && c + tempC >= 0 && c + tempC < M) {
-                //ÇöÀç ¹æ¹®ÇÑ ÀûÀÌ ¾ø°í ¹Ù´Ù°¡ ¾Æ´Ï¸é °°Àº ¼¶À¸·Î Ãë±Ş
+                //í˜„ì¬ ë°©ë¬¸í•œ ì ì´ ì—†ê³  ë°”ë‹¤ê°€ ì•„ë‹ˆë©´ ê°™ì€ ì„¬ìœ¼ë¡œ ì·¨ê¸‰
                 if (visited[r + tempR][c + tempC] == false && map[r + tempR][c + tempC] != 0) {
                     int now_i = r + tempR;
                     int now_j = c + tempC;
