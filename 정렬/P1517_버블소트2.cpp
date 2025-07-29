@@ -22,7 +22,7 @@ int main()
         cin >> A[i];
     }
     result = 0;
-    merget_sort(1, N); // º´ÇÕÁ¤·Ä ¼öÇàÇÏ±â
+    merget_sort(1, N); // ë³‘í•©ì •ë ¬ ìˆ˜í–‰í•˜ê¸°
     
     cout << result << "\n";
 }
@@ -31,7 +31,7 @@ void merget_sort(int s, int e) {
     if (e - s < 1)
         return;
     int m = s + (e - s) / 2;
-    // Àç±ÍÇÔ¼ö ÇüÅÂ·Î ±¸Çö
+    // ì¬ê·€í•¨ìˆ˜ í˜•íƒœë¡œ êµ¬í˜„
     merget_sort(s, m);
     merget_sort(m + 1, e);
     for (int i = s; i <= e; i++) {
@@ -40,10 +40,10 @@ void merget_sort(int s, int e) {
     int k = s;
     int index1 = s;
     int index2 = m + 1;
-    while (index1 <= m && index2 <= e) { // µÎ ±×·ìÀ» Merge ÇØÁÖ´Â ·ÎÁ÷
+    while (index1 <= m && index2 <= e) { // ë‘ ê·¸ë£¹ì„ Merge í•´ì£¼ëŠ” ë¡œì§
         if (tmp[index1] > tmp[index2]) {
             A[k] = tmp[index2];
-            result = result + index2 - k; // µÚÂÊ µ¥ÀÌÅÍ °ªÀÌ ÀÛ¾Æ ¼±ÅÃµÇ´Â °æ¿ì °á°ú °ª ¾÷µ¥ÀÌÆ®
+            result = result + index2 - k; // ë’¤ìª½ ë°ì´í„° ê°’ì´ ì‘ì•„ ì„ íƒë˜ëŠ” ê²½ìš° ê²°ê³¼ ê°’ ì—…ë°ì´íŠ¸
             k++;
             index2++;
         }
@@ -53,7 +53,7 @@ void merget_sort(int s, int e) {
             index1++;
         }
     }
-    // ÇÑÂÊ ±×·ìÀÌ ¸ğµÎ ¼±ÅÃµÈ ÈÄ ³²¾ÆÀÖ´Â °ª Á¤¸®ÇÏ±â
+    // í•œìª½ ê·¸ë£¹ì´ ëª¨ë‘ ì„ íƒëœ í›„ ë‚¨ì•„ìˆëŠ” ê°’ ì •ë¦¬í•˜ê¸°
     while (index1 <= m) {
         A[k] = tmp[index1];
         k++;
