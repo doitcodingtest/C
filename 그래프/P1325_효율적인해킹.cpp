@@ -35,7 +35,7 @@ int main()
         maxVal = max(maxVal, answer[i]);
     }
     for (int i = 1; i <= N; i++) {
-        if (answer[i] == maxVal) //answer¹è¿­¿¡¼­ maxVal¿Í °°Àº °ªÀ» °¡Áø index¸¦ Á¤´äÀ¸·Î Ãâ·Â
+        if (answer[i] == maxVal) //answerë°°ì—´ì—ì„œ maxValì™€ ê°™ì€ ê°’ì„ ê°€ì§„ indexë¥¼ ì •ë‹µìœ¼ë¡œ ì¶œë ¥
            cout << i << " ";
     }
 }
@@ -50,7 +50,7 @@ void BFS(int index) {
         for (int i : A[now_node]) {
             if (visited[i] == false) {
                 visited[i] = true;
-                answer[i]++; //½Å±Ô Á¤Á¡ÀÎµ¦½ºÀÇ Á¤´ä ¹è¿­ °ªÀ» Áõ°¡ ½ÃÅ°±â  
+                answer[i]++; //ì‹ ê·œ ì •ì ì¸ë±ìŠ¤ì˜ ì •ë‹µ ë°°ì—´ ê°’ì„ ì¦ê°€ ì‹œí‚¤ê¸°  
                 queue.push(i);
             }
         }
