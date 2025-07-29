@@ -17,7 +17,7 @@ int main()
 
     cin >> N >> M >> K;
 
-    for (int i = 0; i < M; i++) { // °¡ÁßÄ¡°¡ ÀÖ´Â ÀÎÁ¢ ¸®½ºÆ® ÃÊ±âÈ­
+    for (int i = 0; i < M; i++) { // ê°€ì¤‘ì¹˜ê°€ ìˆëŠ” ì¸ì ‘ ë¦¬ìŠ¤íŠ¸ ì´ˆê¸°í™”
         int a, b, c;
         cin >> a >> b >> c;
         W[a][b] = c;
@@ -30,23 +30,23 @@ int main()
         Node u = pq.top();
         pq.pop();
         for (int adjNode = 1; adjNode <= N; adjNode++) {
-            // ¿¬°áµÈ ¸ğµç ³ëµå¿¡ ´ëÇÏ¿© °Ë»öÇÏ±â 
+            // ì—°ê²°ëœ ëª¨ë“  ë…¸ë“œì— ëŒ€í•˜ì—¬ ê²€ìƒ‰í•˜ê¸° 
             if (W[u.second][adjNode] != 0) {
-                // ÀúÀåµÈ °æ·Î°¡ K°³°¡ ¾ÈµÉ °æ¿ì ±×³É Ãß°¡ÇÑ´Ù.
+                // ì €ì¥ëœ ê²½ë¡œê°€ Kê°œê°€ ì•ˆë  ê²½ìš° ê·¸ëƒ¥ ì¶”ê°€í•œë‹¤.
                 if (distQueue[adjNode].size() < K) {
                     distQueue[adjNode].push(u.first + W[u.second][adjNode]);
                     pq.push(make_pair(u.first + W[u.second][adjNode], adjNode));
                 }
-                // ÀúÀåµÈ °æ·Î°¡ K°³ÀÌ°í, ÇöÀç °¡Àå Å« °ªº¸´Ù ÀÛÀ»¶§¸¸ Ãß°¡ÇÑ´Ù.
+                // ì €ì¥ëœ ê²½ë¡œê°€ Kê°œì´ê³ , í˜„ì¬ ê°€ì¥ í° ê°’ë³´ë‹¤ ì‘ì„ë•Œë§Œ ì¶”ê°€í•œë‹¤.
                 else if (distQueue[adjNode].top() > u.first + W[u.second][adjNode]) {
-                    distQueue[adjNode].pop(); // ±âÁ¸ Å¥¿¡¼­ Max°ª »èÁ¦¸ÕÀú ÇØÁÖ¾î¾ßÇÔ
+                    distQueue[adjNode].pop(); // ê¸°ì¡´ íì—ì„œ Maxê°’ ì‚­ì œë¨¼ì € í•´ì£¼ì–´ì•¼í•¨
                     distQueue[adjNode].push(u.first + W[u.second][adjNode]);
                     pq.push(make_pair(u.first + W[u.second][adjNode], adjNode));
                 }
             }
         }
     }
-    for (int i = 1; i <= N; i++) { // K¹øÂ° °æ·Î Ãâ·Â
+    for (int i = 1; i <= N; i++) { // Kë²ˆì§¸ ê²½ë¡œ ì¶œë ¥
         if (distQueue[i].size() == K) {
            cout << distQueue[i].top() << "\n";
         }
