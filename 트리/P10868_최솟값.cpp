@@ -16,7 +16,7 @@ int main()
     cout.tie(NULL);
 
     int N, M;
-    cin >> N >> M; // ¼öÀÇ °³¼ö, ±¸°£ÀÇ ÃÖ¼Ú°ªÀ» ±¸ÇÏ´Â È½¼ö
+    cin >> N >> M; // ìˆ˜ì˜ ê°œìˆ˜, êµ¬ê°„ì˜ ìµœì†Ÿê°’ì„ êµ¬í•˜ëŠ” íšŸìˆ˜
 
     int treeHeight = 0;
     int lenght = N;
@@ -30,11 +30,11 @@ int main()
     tree.resize(treeSize + 1);
     fill(tree.begin(), tree.end(), LONG_MAX);
 
-    // µ¥ÀÌÅÍ¸¦ ¸®ÇÁ³ëµå¿¡ ÀÔ·Â ¹Ş±â
+    // ë°ì´í„°ë¥¼ ë¦¬í”„ë…¸ë“œì— ì…ë ¥ ë°›ê¸°
     for (int i = leftNodeStartIndex + 1; i <= leftNodeStartIndex + N; i++) {
         cin >> tree[i];
     }
-    setTree(treeSize - 1); // tree ¸¸µé±â
+    setTree(treeSize - 1); // tree ë§Œë“¤ê¸°
 
     for (int i = 0; i < M; i++) {
         long s, e;
@@ -47,7 +47,7 @@ int main()
 }
 
 
-long getMin(int s, int e) {     // ±¸°£³»¿¡ ÃÖ¼Ò°ª ±¸ÇÏ±â ÇÔ¼ö
+long getMin(int s, int e) {     // êµ¬ê°„ë‚´ì— ìµœì†Œê°’ êµ¬í•˜ê¸° í•¨ìˆ˜
     long Min = LONG_MAX;
     while (s <= e) {
         if (s % 2 == 1) {
@@ -64,7 +64,7 @@ long getMin(int s, int e) {     // ±¸°£³»¿¡ ÃÖ¼Ò°ª ±¸ÇÏ±â ÇÔ¼ö
     return Min;
 }
 
-void setTree(int i) { //ÃÊ±â Æ®¸® »ı¼º ÇÔ¼ö 
+void setTree(int i) { //ì´ˆê¸° íŠ¸ë¦¬ ìƒì„± í•¨ìˆ˜ 
     while (i != 1) {
         if (tree[i / 2] > tree[i])
             tree[i / 2] = tree[i];
