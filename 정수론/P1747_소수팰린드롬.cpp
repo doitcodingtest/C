@@ -18,16 +18,16 @@ int main()
     for (int i = 2; i < 10000001; i++) {
         A[i] = i;
     }
-    for (int i = 2; i <= sqrt(10000001); i++) { // Á¦°ö±Ù ±îÁö¸¸ ¼öÇà
+    for (int i = 2; i <= sqrt(10000001); i++) { // ì œê³±ê·¼ ê¹Œì§€ë§Œ ìˆ˜í–‰
         if (A[i] == 0) {
             continue;
         }
-        for (int j = i + i; j < 10000001; j = j + i) { // ¹è¼ö Áö¿ì±â
+        for (int j = i + i; j < 10000001; j = j + i) { // ë°°ìˆ˜ ì§€ìš°ê¸°
             A[j] = 0;
         }
     }
     int i = N;
-    while (true) { // NºÎÅÍ 1¾¿ Áõ°¡½ÃÄÑ°¡¸é¼­ ¼Ò¼ö¿Í Æç¸°µå·Ò ¼ö°¡ ¸Â´ÂÁö È®ÀÎ
+    while (true) { // Në¶€í„° 1ì”© ì¦ê°€ì‹œì¼œê°€ë©´ì„œ ì†Œìˆ˜ì™€ íŽ ë¦°ë“œë¡¬ ìˆ˜ê°€ ë§žëŠ”ì§€ í™•ì¸
         if (A[i] != 0) {
             int result = A[i];
             if (isPalindrome(result)) {
@@ -39,7 +39,7 @@ int main()
     }
 }
 
-bool isPalindrome(int target) // Æç¸°µå·Ò¼ö ÆÇº° ÇÔ¼ö
+bool isPalindrome(int target) // íŽ ë¦°ë“œë¡¬ìˆ˜ íŒë³„ í•¨ìˆ˜
 {
 
     string temp_str = to_string(target); //converting number to a string
