@@ -18,30 +18,30 @@ int main()
     cin >> N >> M;
 
     mdistance.resize(N + 1);
-    std::fill(mdistance.begin(), mdistance.end(), LONG_MAX); // ÃÖ´Ü°Å¸® ¹è¿­ ÃÊ±âÈ­
+    std::fill(mdistance.begin(), mdistance.end(), LONG_MAX); // ìµœë‹¨ê±°ë¦¬ ë°°ì—´ ì´ˆê¸°í™”
 
-    for (int i = 0; i < M; i++) { // °£¼± ¸®½ºÆ®¿¡ µ¥ÀÌÅÍ ÀúÀåÇÏ±â
+    for (int i = 0; i < M; i++) { // ê°„ì„  ë¦¬ìŠ¤íŠ¸ì— ë°ì´í„° ì €ì¥í•˜ê¸°
         int start, end, time;
         cin >> start >> end >> time;
         edges.push_back(make_tuple(start, end, time));
     }
 
-    // º§¸¸Æ÷µå ¾Ë°í¸®Áò ¼öÇà
+    // ë²¨ë§Œí¬ë“œ ì•Œê³ ë¦¬ì¦˜ ìˆ˜í–‰
     mdistance[1] = 0;
-    for (int i = 1; i < N; i++) {  //Nº¸´Ù ÇÏ³ª ÀûÀº ¼ö¸¸Å­ ¹İº¹
+    for (int i = 1; i < N; i++) {  //Në³´ë‹¤ í•˜ë‚˜ ì ì€ ìˆ˜ë§Œí¼ ë°˜ë³µ
         for (int j = 0; j < M; j++) {
             edge medge = edges[j];
             int start = get<0>(medge);
             int end = get<1>(medge);
             int time = get<2>(medge);
-            // ´õ ÀÛÀº ÃÖ´Ü°Å¸® °¡ ÀÖ´Â °æ¿ì °»½Å
+            // ë” ì‘ì€ ìµœë‹¨ê±°ë¦¬ ê°€ ìˆëŠ” ê²½ìš° ê°±ì‹ 
             if (mdistance[start] != LONG_MAX && mdistance[end] > mdistance[start] + time) {
                 mdistance[end] = mdistance[start] + time;
             }
         }
     }
     bool mCycle = false;
-    for (int i = 0; i < M; i++) { // À½¼ö cycle È®ÀÎ
+    for (int i = 0; i < M; i++) { // ìŒìˆ˜ cycle í™•ì¸
         edge medge = edges[i];
         int start = get<0>(medge);
         int end = get<1>(medge);
@@ -50,7 +50,7 @@ int main()
             mCycle = true;
         }
     }
-    if (!mCycle) { // À½ÀÇ cycleÀÌ ¾ø´Â °æ¿ì
+    if (!mCycle) { // ìŒì˜ cycleì´ ì—†ëŠ” ê²½ìš°
         for (int i = 2; i <= N; i++) {
             if (mdistance[i] == LONG_MAX)
                 cout << -1 << "\n";
@@ -58,7 +58,7 @@ int main()
                 cout << mdistance[i] << "\n";
         }
     }
-    else { // À½ÀÇ cycleÀÌ ÀÖ´Â °æ¿ì
+    else { // ìŒì˜ cycleì´ ìˆëŠ” ê²½ìš°
         cout << -1 << "\n";
     }
 }
