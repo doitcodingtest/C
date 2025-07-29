@@ -23,5 +23,5 @@ int gcd(int a, int b) {
     if (b == 0)
         return a;
     else
-        return gcd(b, a % b);   // Àç±ÍÇÔ¼ö ÇüÅÂ·Î ±¸Çö
+        return gcd(b, a % b);   // Ã€Ã§Â±ÃÃ‡Ã”Â¼Ã¶ Ã‡Ã¼Ã…Ã‚Â·Ã Â±Â¸Ã‡Ã¶
 }
