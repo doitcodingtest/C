@@ -22,9 +22,9 @@ int main()
         char node_char, left, right;
         cin >> node_char >> left >> right;
 
-        int node = node_char - 'A'; 	// index·Î º¯È¯À» À§ÇØ A¹®ÀÚ »©ÁÖ±â
+        int node = node_char - 'A'; 	// indexë¡œ ë³€í™˜ì„ ìœ„í•´ Aë¬¸ì ë¹¼ì£¼ê¸°
 
-        // ÀÚ½Ä ³ëµå°¡ ¾øÀ» °æ¿ì -1À» ÀúÀå
+        // ìì‹ ë…¸ë“œê°€ ì—†ì„ ê²½ìš° -1ì„ ì €ì¥
         if (left == '.') {
             tree[node][0] = -1;
         }
@@ -49,21 +49,21 @@ int main()
 void preOrder(int now) {
     if (now == -1)
         return;
-    cout << (char)(now + 'A');  // 1.ÇöÀç ³ëµå
-    preOrder(tree[now][0]);     // 2.¿ŞÂÊ Å½»ö
-    preOrder(tree[now][1]);     // 3.¿À¸¥ÂÊ Å½»ö
+    cout << (char)(now + 'A');  // 1.í˜„ì¬ ë…¸ë“œ
+    preOrder(tree[now][0]);     // 2.ì™¼ìª½ íƒìƒ‰
+    preOrder(tree[now][1]);     // 3.ì˜¤ë¥¸ìª½ íƒìƒ‰
 }
 void inOrder(int now) {
     if (now == -1)
         return;
-    inOrder(tree[now][0]);       // 1.¿ŞÂÊ Å½»ö
-    cout << (char)(now + 'A'); // 2.ÇöÀç ³ëµå
-    inOrder(tree[now][1]);       // 3.¿À¸¥ÂÊ Å½»ö
+    inOrder(tree[now][0]);       // 1.ì™¼ìª½ íƒìƒ‰
+    cout << (char)(now + 'A'); // 2.í˜„ì¬ ë…¸ë“œ
+    inOrder(tree[now][1]);       // 3.ì˜¤ë¥¸ìª½ íƒìƒ‰
 }
 void postOrder(int now) {
     if (now == -1)
         return;
-    postOrder(tree[now][0]);    // 1.¿ŞÂÊ Å½»ö
-    postOrder(tree[now][1]);    // 2.¿À¸¥ÂÊ Å½»ö
-    cout << (char)(now + 'A');  // 3.ÇöÀç ³ëµå
+    postOrder(tree[now][0]);    // 1.ì™¼ìª½ íƒìƒ‰
+    postOrder(tree[now][1]);    // 2.ì˜¤ë¥¸ìª½ íƒìƒ‰
+    cout << (char)(now + 'A');  // 3.í˜„ì¬ ë…¸ë“œ
 }
