@@ -17,7 +17,7 @@ int main()
     cout.tie(NULL);
 
     int N, M, K;
-    cin >> N >> M >> K; // ¼öÀÇ °³¼ö, º¯°æÀÌ ÀÏ¾î³ª´Â È½¼ö, ±¸°£ °ö ±¸ÇÏ´Â È½¼ö
+    cin >> N >> M >> K; // ìˆ˜ì˜ ê°œìˆ˜, ë³€ê²½ì´ ì¼ì–´ë‚˜ëŠ” íšŸìˆ˜, êµ¬ê°„ ê³± êµ¬í•˜ëŠ” íšŸìˆ˜
 
     int treeHeight = 0;
     int lenght = N;
@@ -30,20 +30,20 @@ int main()
     tree.resize(treeSize + 1);
     fill(tree.begin(), tree.end(), 1);
 
-    // µ¥ÀÌÅÍ¸¦ ¸®ÇÁ³ëµå¿¡ ÀÔ·Â ¹Ş±â
+    // ë°ì´í„°ë¥¼ ë¦¬í”„ë…¸ë“œì— ì…ë ¥ ë°›ê¸°
     for (int i = leftNodeStartIndex + 1; i <= leftNodeStartIndex + N; i++) {
         cin >> tree[i];
     }
-    setTree(treeSize - 1); // tree ¸¸µé±â
+    setTree(treeSize - 1); // tree ë§Œë“¤ê¸°
 
     for (int i = 0; i < M + K; i++) {
         long a, s, e;
         cin >> a >> s >> e;
 
-        if (a == 1) { // º¯°æ
+        if (a == 1) { // ë³€ê²½
             changeVal(leftNodeStartIndex + s, e);
         }
-        else if (a == 2) { // ±¸°£ °ö
+        else if (a == 2) { // êµ¬ê°„ ê³±
             s = s + leftNodeStartIndex;
             e = e + leftNodeStartIndex;
             cout << getMul(s, e) << "\n";
@@ -51,7 +51,7 @@ int main()
     }
 }
 
-// °ö¼ÀÀÌ ¹ß»ıÇÒ¶§ ¸¶´Ù MOD¿¬»ê ¼öÇà
+// ê³±ì…ˆì´ ë°œìƒí• ë•Œ ë§ˆë‹¤ MODì—°ì‚° ìˆ˜í–‰
 long getMul(int s, int e) {
     long partMul = 1;
     while (s <= e) {
@@ -71,7 +71,7 @@ long getMul(int s, int e) {
 
 void changeVal(int index, long val) {
     tree[index] = val;
-    while (index > 1) { //ÇöÀç ³ëµåÀÇ ¾çÂÊ ÀÚ½Ä ³ëµå¸¦ Ã£¾Æ °öÇØÁÖ´Â ·ÎÁ÷
+    while (index > 1) { //í˜„ì¬ ë…¸ë“œì˜ ì–‘ìª½ ìì‹ ë…¸ë“œë¥¼ ì°¾ì•„ ê³±í•´ì£¼ëŠ” ë¡œì§
         index = index / 2;
         tree[index] = tree[index * 2] % MOD * tree[index * 2 + 1] % MOD;
     }
