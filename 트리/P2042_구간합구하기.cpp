@@ -16,7 +16,7 @@ int main()
     cout.tie(NULL);
 
     int N, M, K;
-    cin >> N >> M >> K; // ¼öÀÇ °³¼ö, º¯°æÀÌ ÀÏ¾î³ª´Â È½¼ö, ±¸°£ ÇÕ ±¸ÇÏ´Â È½¼ö
+    cin >> N >> M >> K; // ìˆ˜ì˜ ê°œìˆ˜, ë³€ê²½ì´ ì¼ì–´ë‚˜ëŠ” íšŸìˆ˜, êµ¬ê°„ í•© êµ¬í•˜ëŠ” íšŸìˆ˜
 
     int treeHeight = 0;
     int lenght = N;
@@ -28,20 +28,20 @@ int main()
     int leftNodeStartIndex = treeSize / 2 - 1;
     tree.resize(treeSize + 1);
 
-    // µ¥ÀÌÅÍ¸¦ ¸®ÇÁ³ëµå¿¡ ÀÔ·Â ¹Ş±â
+    // ë°ì´í„°ë¥¼ ë¦¬í”„ë…¸ë“œì— ì…ë ¥ ë°›ê¸°
     for (int i = leftNodeStartIndex + 1; i <= leftNodeStartIndex + N; i++) {
         cin >> tree[i];
     }
-    setTree(treeSize - 1); // tree ¸¸µé±â
+    setTree(treeSize - 1); // tree ë§Œë“¤ê¸°
 
     for (int i = 0; i < M + K; i++) {
         long a, s, e;
         cin >> a >> s >> e;
         
-        if (a == 1) { // º¯°æ
+        if (a == 1) { // ë³€ê²½
             changeVal(leftNodeStartIndex + s, e);
         }
-        else if (a == 2) { // ±¸°£ ÇÕ
+        else if (a == 2) { // êµ¬ê°„ í•©
             s = s + leftNodeStartIndex;
             e = e + leftNodeStartIndex;
             cout << getSum(s, e) << "\n";
@@ -50,7 +50,7 @@ int main()
 }
 
 
-long getSum(int s, int e) {     // ±¸°£ÇÕ ¿¬»ê ÇÔ¼ö
+long getSum(int s, int e) {     // êµ¬ê°„í•© ì—°ì‚° í•¨ìˆ˜
     long partSum = 0;
     while (s <= e) {
         if (s % 2 == 1) {
@@ -67,7 +67,7 @@ long getSum(int s, int e) {     // ±¸°£ÇÕ ¿¬»ê ÇÔ¼ö
     return partSum;
 }
 
-void changeVal(int index, long val) {   // Æ®¸® °ª º¯°æ ÇÔ¼ö
+void changeVal(int index, long val) {   // íŠ¸ë¦¬ ê°’ ë³€ê²½ í•¨ìˆ˜
     long diff = val - tree[index];
     while (index > 0) {
         tree[index] = tree[index] + diff;
@@ -75,7 +75,7 @@ void changeVal(int index, long val) {   // Æ®¸® °ª º¯°æ ÇÔ¼ö
     }
 }
 
-void setTree(int i) { //ÃÊ±â Æ®¸® »ı¼º ÇÔ¼ö 
+void setTree(int i) { //ì´ˆê¸° íŠ¸ë¦¬ ìƒì„± í•¨ìˆ˜ 
     while (i != 1) {
         tree[i / 2] += tree[i];
         i--;
