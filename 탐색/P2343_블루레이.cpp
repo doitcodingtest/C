@@ -18,16 +18,16 @@ int main()
     for (int i = 0; i < N; i++) {
         cin >> A[i];
         if (start < A[i]) {
-            start = A[i]; // ·¹½¼ ÃÖ´ë°ªÀ» ½ÃÀÛÀÎµ¦½º·Î ÀúÀå
+            start = A[i]; // ë ˆìŠ¨ ìµœëŒ€ê°’ì„ ì‹œì‘ì¸ë±ìŠ¤ë¡œ ì €ì¥
         }
-        end = end + A[i]; // ¸ğµç ·¹½¼ÀÇ ÃÑ ÇÕÀ» Á¾·á ÀÎµ¦½º·Î ÀúÀå
+        end = end + A[i]; // ëª¨ë“  ë ˆìŠ¨ì˜ ì´ í•©ì„ ì¢…ë£Œ ì¸ë±ìŠ¤ë¡œ ì €ì¥
     }
 
     while (start <= end) {
         int middle = (start + end) / 2;
         int sum = 0;
         int count = 0;
-        for (int i = 0; i < N; i++) { // middle°ªÀ¸·Î ¸ğµç ·¹½¼À» ÀúÀå ÇÒ ¼ö ÀÖ´ÂÁö È®ÀÎ
+        for (int i = 0; i < N; i++) { // middleê°’ìœ¼ë¡œ ëª¨ë“  ë ˆìŠ¨ì„ ì €ì¥ í•  ìˆ˜ ìˆëŠ”ì§€ í™•ì¸
             if (sum + A[i] > middle) {
                 count++;
                 sum = 0;
