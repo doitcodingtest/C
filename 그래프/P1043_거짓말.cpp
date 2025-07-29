@@ -19,13 +19,13 @@ int main()
     int N, M, T;
     cin >> N >> M >> T;
     trueP.resize(T);
-    for (int i = 0; i < T; i++) { // Áø½ÇÀ» ¾Æ´Â »ç¶÷ ÀúÀå
+    for (int i = 0; i < T; i++) { // ì§„ì‹¤ì„ ì•„ëŠ” ì‚¬ëžŒ ì €ìž¥
         cin >> trueP[i];
     }
     
     party.resize(M);
 
-    for (int i = 0; i < M; i++) { // ÆÄÆ¼ µ¥ÀÌÅÍ ÀúÀå
+    for (int i = 0; i < M; i++) { // íŒŒí‹° ë°ì´í„° ì €ìž¥
         int party_size;
         cin >> party_size;
         for (int j = 0; j < party_size; j++) {
@@ -36,17 +36,17 @@ int main()
     }
 
     parent.resize(N + 1);
-    for (int i = 0; i <= N; i++) { // ´ëÇ¥ ³ëµå¸¦ ÀÚ±â ÀÚ½ÅÀ¸·Î ÃÊ±âÈ­ ÇÏ±â
+    for (int i = 0; i <= N; i++) { // ëŒ€í‘œ ë…¸ë“œë¥¼ ìžê¸° ìžì‹ ìœ¼ë¡œ ì´ˆê¸°í™” í•˜ê¸°
         parent[i] = i;
     }
 
-    for (int i = 0; i < M; i++) { // °¢ ÆÄÆ¼¿¡ Âü¿©ÇÑ »ç¶÷µéÀ» ÇÏ³ªÀÇ ±×·ìÀ¸·Î ¸¸µé±â -> union ¿¬»ê
+    for (int i = 0; i < M; i++) { // ê° íŒŒí‹°ì— ì°¸ì—¬í•œ ì‚¬ëžŒë“¤ì„ í•˜ë‚˜ì˜ ê·¸ë£¹ìœ¼ë¡œ ë§Œë“¤ê¸° -> union ì—°ì‚°
         int firstPeople = party[i][0];
         for (int j = 1; j < party[i].size(); j++) {
             unionfunc(firstPeople, party[i][j]);
         }
     }
-    for (int i = 0; i < M; i++) { // °¢ ÆÄÆ¼¿¡¼­ Áø½ÇÀ» ¾Æ´Â »ç¶÷°ú °°Àº ±×·ì¿¡ ÀÖ´Ù¸é °úÀå ÇÒ ¼ö ¾øÀ½
+    for (int i = 0; i < M; i++) { // ê° íŒŒí‹°ì—ì„œ ì§„ì‹¤ì„ ì•„ëŠ” ì‚¬ëžŒê³¼ ê°™ì€ ê·¸ë£¹ì— ìžˆë‹¤ë©´ ê³¼ìž¥ í•  ìˆ˜ ì—†ìŒ
         bool isPossible = true;
         int cur = party[i][0];
         for (int j = 0; j < T; j++) {
@@ -60,16 +60,16 @@ int main()
     }
     cout << result;
 }
-void unionfunc(int a, int b) { // union ¿¬»ê : ¹Ù·Î ¿¬°áÀÌ ¾Æ´Ñ ´ëÇ¥ ³ëµå³¢¸® ¿¬°áÇÏ¿© ÁÜ
+void unionfunc(int a, int b) { // union ì—°ì‚° : ë°”ë¡œ ì—°ê²°ì´ ì•„ë‹Œ ëŒ€í‘œ ë…¸ë“œë¼ë¦¬ ì—°ê²°í•˜ì—¬ ì¤Œ
     a = find(a);
     b = find(b);
     if (a != b) {
         parent[b] = a;
     }
 }
-int find(int a) { // find ¿¬»ê
+int find(int a) { // find ì—°ì‚°
     if (a == parent[a])
         return a;
     else
-        return parent[a] = find(parent[a]); // Àç±ÍÇÔ¼öÀÇ ÇüÅÂ·Î ±¸Çö
+        return parent[a] = find(parent[a]); // ìž¬ê·€í•¨ìˆ˜ì˜ í˜•íƒœë¡œ êµ¬í˜„
 }
