@@ -14,25 +14,25 @@ int main()
     cin >> N;
 
     vector < vector <int> > A;
-    vector <int>  indegree;     // ÁøÀÔÂ÷¼ö¹è¿­
+    vector <int>  indegree;     // ì§„ì…ì°¨ìˆ˜ë°°ì—´
     vector <int>  selfBuild;
     A.resize(N + 1);
     indegree.resize(N + 1);
     selfBuild.resize(N + 1);
 
     for (int i = 1; i <= N; i++) {
-        cin >> selfBuild[i]; // ÇØ´ç °Ç¹°À» Áş±â À§ÇÑ ½Ã°£
-        while (true) { // ÀÎÁ¢¸®½ºÆ® µ¥ÀÌÅÍ ÀúÀå
+        cin >> selfBuild[i]; // í•´ë‹¹ ê±´ë¬¼ì„ ì§“ê¸° ìœ„í•œ ì‹œê°„
+        while (true) { // ì¸ì ‘ë¦¬ìŠ¤íŠ¸ ë°ì´í„° ì €ì¥
             int preTemp;
             cin >> preTemp;
             if(preTemp == -1)
                 break;
             A[preTemp].push_back(i);
-            indegree[i]++; // ÁøÀÔÂ÷¼ö µ¥ÀÌÅÍ ÀúÀå
+            indegree[i]++; // ì§„ì…ì°¨ìˆ˜ ë°ì´í„° ì €ì¥
         }
     }
 
-    queue<int> queue;  // À§»ó Á¤·Ä ¼öÇà
+    queue<int> queue;  // ìœ„ìƒ ì •ë ¬ ìˆ˜í–‰
     for (int i = 1; i <= N; i++) {
         if (indegree[i] == 0) {
             queue.push(i);
