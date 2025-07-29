@@ -21,16 +21,16 @@ int main()
 		S[i] = S[i - 1] + temp;
 	}
 
-	for (int i = 0; i < N; i++) { // ÇÕ ¹è¿­ÀÇ ¸ðµç °ª¿¡ % ¿¬»ê ¼öÇàÇÏ±â
+	for (int i = 0; i < N; i++) { // í•© ë°°ì—´ì˜ ëª¨ë“  ê°’ì— % ì—°ì‚° ìˆ˜í–‰í•˜ê¸°
 		int remainder = S[i] % M;
-		// 0 ~ i±îÁöÀÇ ±¸°£ ÇÕ ÀÚÃ¼°¡ 0ÀÏ ¶§ Á¤´ä¿¡ ´õÇÏ±â
+		// 0 ~ iê¹Œì§€ì˜ êµ¬ê°„ í•© ìžì²´ê°€ 0ì¼ ë•Œ ì •ë‹µì— ë”í•˜ê¸°
 		if (remainder == 0) answer++;
-		// ³ª¸ÓÁö°¡ °°Àº ÀÎµ¦½ºÀÇ °³¼ö Ä«¿îÆÃÇÏ±â
+		// ë‚˜ë¨¸ì§€ê°€ ê°™ì€ ì¸ë±ìŠ¤ì˜ ê°œìˆ˜ ì¹´ìš´íŒ…í•˜ê¸°
 		C[remainder]++;
 	}
 	for (int i = 0; i < M; i++) {
 		if (C[i] > 1) {
-			// ³ª¸ÓÁö°¡ °°Àº ÀÎµ¦½º Áß 2°³¸¦ »Ì´Â °æ¿ìÀÇ ¼ö¸¦ ´õÇÏ±â
+			// ë‚˜ë¨¸ì§€ê°€ ê°™ì€ ì¸ë±ìŠ¤ ì¤‘ 2ê°œë¥¼ ë½‘ëŠ” ê²½ìš°ì˜ ìˆ˜ë¥¼ ë”í•˜ê¸°
 			answer = answer + (C[i] * (C[i] - 1) / 2);
 		}
 	}
