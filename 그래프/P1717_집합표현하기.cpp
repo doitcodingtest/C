@@ -18,17 +18,17 @@ int main()
     cin >> N >> M;
     parent.resize(N + 1);
 
-    for (int i = 0; i <= N; i++) { 	// ´ëÇ¥ ³ëµå¸¦ ÀÚ±â ÀÚ½ÅÀ¸·Î ÃÊ±âÈ­ ÇÏ±â
+    for (int i = 0; i <= N; i++) { 	// ëŒ€í‘œ ë…¸ë“œë¥¼ ìê¸° ìì‹ ìœ¼ë¡œ ì´ˆê¸°í™” í•˜ê¸°
         parent[i] = i;
     }
 
     for (int i = 0; i < M; i++) {
         int question, a, b;
         cin >> question >> a >> b;
-        if (question == 0) { 	// ÁıÇÕ ÇÕÄ¡±â
+        if (question == 0) { 	// ì§‘í•© í•©ì¹˜ê¸°
             unionfunc(a, b);
         }
-        else {	 // °°Àº ÁıÇÕÀÇ ¿ø¼ÒÀÎÁö È®ÀÎÇÏ±â
+        else {	 // ê°™ì€ ì§‘í•©ì˜ ì›ì†Œì¸ì§€ í™•ì¸í•˜ê¸°
             if (checkSame(a, b)) {
                 cout << "YES" << "\n";
             }
@@ -38,20 +38,20 @@ int main()
         }
     }
 }
-void unionfunc(int a, int b) { 	// union ¿¬»ê : ¹Ù·Î ¿¬°áÀÌ ¾Æ´Ñ ´ëÇ¥ ³ëµå³¢¸® ¿¬°áÇÏ¿© ÁÜ
+void unionfunc(int a, int b) { 	// union ì—°ì‚° : ë°”ë¡œ ì—°ê²°ì´ ì•„ë‹Œ ëŒ€í‘œ ë…¸ë“œë¼ë¦¬ ì—°ê²°í•˜ì—¬ ì¤Œ
     a = find(a);
     b = find(b);
     if (a != b) {
         parent[b] = a;
     }
 }
-int find(int a) {	 // find ¿¬»ê : ´ëÇ¥ ³ëµå¸¦ Ã£¾Æ¼­ ¸®ÅÏ
+int find(int a) {	 // find ì—°ì‚° : ëŒ€í‘œ ë…¸ë“œë¥¼ ì°¾ì•„ì„œ ë¦¬í„´
     if (a == parent[a])
         return a;
     else
-        return parent[a] = find(parent[a]);	 // Àç±ÍÇÔ¼öÀÇ ÇüÅÂ·Î ±¸Çö
+        return parent[a] = find(parent[a]);	 // ì¬ê·€í•¨ìˆ˜ì˜ í˜•íƒœë¡œ êµ¬í˜„
 }
-bool checkSame(int a, int b) { // µÎ ¿ø¼Ò°¡ °°Àº ÁıÇÕÀÎÁö È®ÀÎ
+bool checkSame(int a, int b) { // ë‘ ì›ì†Œê°€ ê°™ì€ ì§‘í•©ì¸ì§€ í™•ì¸
     a = find(a);
     b = find(b);
     if (a == b) {
