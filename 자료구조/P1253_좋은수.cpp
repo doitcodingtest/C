@@ -21,8 +21,8 @@ int main()
         long find = A[k];
         int i = 0;
         int j = N - 1;
-        while (i < j) {  // ÅõÆ÷ÀÎÅÍ ¾Ë°í¸®Áò 
-            if (A[i] + A[j] == find) {  // ¼­·Î ´Ù¸¥ µÎ ¼öÀÇ ÇÕÀÎÁö Ã¼Å©
+        while (i < j) {  // íˆ¬í¬ì¸í„° ì•Œê³ ë¦¬ì¦˜ 
+            if (A[i] + A[j] == find) {  // ì„œë¡œ ë‹¤ë¥¸ ë‘ ìˆ˜ì˜ í•©ì¸ì§€ ì²´í¬
                 if (i != k && j != k) {
                     Result++;
                     break;
