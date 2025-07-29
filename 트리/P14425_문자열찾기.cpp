@@ -4,7 +4,7 @@
 #include <limits.h>
 using namespace std;
 
-class Node 	//Æ®¶óÀÌ ÀÚ·á ±¸Á¶ ÀúÀå¿ë Å¬·¡½º
+class Node 	//íŠ¸ë¼ì´ ìë£Œ êµ¬ì¡° ì €ì¥ìš© í´ë˜ìŠ¤
 {
 public:
     Node* next[26];
@@ -18,7 +18,7 @@ public:
             delete child;
     }
 
-    void insert(const char* key) {		// ¹®ÀÚ¿­ »ğÀÔ ÇÔ¼ö
+    void insert(const char* key) {		// ë¬¸ìì—´ ì‚½ì… í•¨ìˆ˜
         if (*key == 0)
             isEnd = true;
         else {
@@ -30,7 +30,7 @@ public:
         }
     }
 
-    Node* find(const char* key) {		// ¹®ÀÚ¿­ Ã£±â ÇÔ¼ö
+    Node* find(const char* key) {		// ë¬¸ìì—´ ì°¾ê¸° í•¨ìˆ˜
         if (*key == 0)
             return this;
 
@@ -53,7 +53,7 @@ int main()
 
     Node* root = new Node();
 
-    while (n > 0) {  	// Æ®¶óÀÌ ÀÚ·á±¸Á¶ ±¸ÃàÇÏ±â
+    while (n > 0) {  	// íŠ¸ë¼ì´ ìë£Œêµ¬ì¡° êµ¬ì¶•í•˜ê¸°
         char text[501];
         cin >> text;
         root->insert(text);
@@ -61,12 +61,12 @@ int main()
     }
 
     int count = 0;
-    while (m > 0) {  	// Æ®¶óÀÌ ÀÚ·á±¸Á¶ °Ë»öÇÏ±â
+    while (m > 0) {  	// íŠ¸ë¼ì´ ìë£Œêµ¬ì¡° ê²€ìƒ‰í•˜ê¸°
         char text[501];
         cin >> text;
         Node* result = root->find(text);
         if (result && result->isEnd) {
-            count++; 	// SÁıÇÕ¿¡ Æ÷ÇÔµÇ´Â ¹®ÀÚ¿­
+            count++; 	// Sì§‘í•©ì— í¬í•¨ë˜ëŠ” ë¬¸ìì—´
         }
         m--;
     }
