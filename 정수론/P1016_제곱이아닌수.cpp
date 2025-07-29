@@ -10,15 +10,15 @@ int main()
 
     long Min, Max;
     cin >> Min >> Max;
-    // ÃÖ´ñ°ª°ú ÃÖ¼Ú°ªÀÇ Â÷ÀÌ ¸¸Å­ ¹è¿­ ¼±¾ð
+    // ìµœëŒ“ê°’ê³¼ ìµœì†Ÿê°’ì˜ ì°¨ì´ ë§Œí¼ ë°°ì—´ ì„ ì–¸
     vector<bool> Check(Max - Min + 1);
-    // 2ÀÇ Á¦°ö¼öÀÎ 4ºÎÅÍ maxº¸´Ù ÀÛ°Å³ª °°Àº ±îÁö ¹Ýº¹
+    // 2ì˜ ì œê³±ìˆ˜ì¸ 4ë¶€í„° maxë³´ë‹¤ ìž‘ê±°ë‚˜ ê°™ì€ ê¹Œì§€ ë°˜ë³µ
     for (long i = 2; i * i <= Max; i++) {
-        long pow = i * i; // Á¦°ö¼ö
+        long pow = i * i; // ì œê³±ìˆ˜
         long start_index = Min / pow;
         if (Min % pow != 0)
-            start_index++; // ³ª¸ÓÁö°¡ ÀÖÀ¸¸é 1À» ´õÇØÁÖ¾î¾ß Minº¸´Ù Å« Á¦°ö¼ö ºÎÅÍ ½ÃÀÛµÊ
-        for (long j = start_index; pow * j <= Max; j++) { // Á¦°ö¼ö¸¦ true·Î º¯°æ
+            start_index++; // ë‚˜ë¨¸ì§€ê°€ ìžˆìœ¼ë©´ 1ì„ ë”í•´ì£¼ì–´ì•¼ Minë³´ë‹¤ í° ì œê³±ìˆ˜ ë¶€í„° ì‹œìž‘ë¨
+        for (long j = start_index; pow * j <= Max; j++) { // ì œê³±ìˆ˜ë¥¼ trueë¡œ ë³€ê²½
             Check[(int)((j * pow) - Min)] = true;
         }
     }
