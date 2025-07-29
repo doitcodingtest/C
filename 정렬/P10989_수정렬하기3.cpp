@@ -17,7 +17,7 @@ int main()
     }
     for (int i = 0; i <= 10000; i++) {
         if (count[i] != 0) {
-            for (int j = 0; j < count[i]; j++) {    // ÇØ´ç count ¹è¿­ÀÇ °ª ¸¸Å­ index¸¦ ¹Ýº¹ÇÏ¿© Ãâ·Â
+            for (int j = 0; j < count[i]; j++) {    // í•´ë‹¹ count ë°°ì—´ì˜ ê°’ ë§Œí¼ indexë¥¼ ë°˜ë³µí•˜ì—¬ ì¶œë ¥
                 cout << i << "\n";  
             }
         }
