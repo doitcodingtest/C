@@ -13,7 +13,7 @@ int main()
     cin >> N;
     vector<pair<int, int>> A(N);
 
-    for (int i = 0; i < N; i++) {   // Á¾·á ½Ã°£ Á¤·Ä ¿ì¼±À» À§ÇØ Á¾·á °ªÀ» first¿¡ ÀúÀå
+    for (int i = 0; i < N; i++) {   // ì¢…ë£Œ ì‹œê°„ ì •ë ¬ ìš°ì„ ì„ ìœ„í•´ ì¢…ë£Œ ê°’ì„ firstì— ì €ì¥
         cin >> A[i].second;
         cin >> A[i].first;
     }
@@ -23,8 +23,8 @@ int main()
     int count = 0;
     int end = -1;
     for (int i = 0; i < N; i++) {
-        if (A[i].second >= end) { // °ãÄ¡Áö ¾Ê´Â ´ÙÀ½ È¸ÀÇ°¡ ³ª¿Â°æ¿ì
-            end = A[i].first; // Á¾·á½Ã°£ ¾÷µ¥ÀÌÆ®
+        if (A[i].second >= end) { // ê²¹ì¹˜ì§€ ì•ŠëŠ” ë‹¤ìŒ íšŒì˜ê°€ ë‚˜ì˜¨ê²½ìš°
+            end = A[i].first; // ì¢…ë£Œì‹œê°„ ì—…ë°ì´íŠ¸
             count++;
         }
     }
