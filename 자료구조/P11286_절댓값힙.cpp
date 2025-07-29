@@ -7,9 +7,9 @@ struct compare {
         int first_abs = abs(o1);
         int second_abs = abs(o2);
         if (first_abs == second_abs)
-            return o1 > o2;// Àı´ë°ªÀÌ °°Àº °æ¿ì À½¼ö ¿ì¼± Á¤·Ä
+            return o1 > o2;// ì ˆëŒ€ê°’ì´ ê°™ì€ ê²½ìš° ìŒìˆ˜ ìš°ì„  ì •ë ¬
         else
-            return first_abs > second_abs;// Àı´ë°ªÀ» ±âÁØÀ¸·Î Á¤·Ä
+            return first_abs > second_abs;// ì ˆëŒ€ê°’ì„ ê¸°ì¤€ìœ¼ë¡œ ì •ë ¬
     }
 };
 
@@ -19,7 +19,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    // ¿ì¼±¼øÀ§ Å¥ ¼±¾ğ¹æ½Ä: <ÀÚ·áÇü, ±¸ÇöÃ¼, ºñ±³ÇÔ¼ö¸í>
+    // ìš°ì„ ìˆœìœ„ í ì„ ì–¸ë°©ì‹: <ìë£Œí˜•, êµ¬í˜„ì²´, ë¹„êµí•¨ìˆ˜ëª…>
     priority_queue<int, vector<int>, compare> MyQueue;
 
     int N;
