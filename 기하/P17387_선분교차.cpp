@@ -17,7 +17,7 @@ int CCW(long x1, long y1, long x2, long y2, long x3, long y3) {
     else if (result < 0) return -1;
     return 0;
 }
-//¼±ºÐ°ãÄ§¿©ºÎ ÆÇº° ÇÔ¼ö
+//ì„ ë¶„ê²¹ì¹¨ì—¬ë¶€ íŒë³„ í•¨ìˆ˜
 bool isOverlab(long x1, long y1, long x2, long y2, long x3, long y3, long x4, long y4) {
     if (min(x1, x2) <= max(x3, x4) && min(x3, x4) <= max(x1, x2)
         && min(y1, y2) <= max(y3, y4) && min(y3, y4) <= max(y1, y2))return true;
@@ -28,10 +28,10 @@ bool isCross(long x1, long y1, long x2, long y2, long x3, long y3, long x4, long
     int abd = CCW(x1, y1, x2, y2, x4, y4);
     int cda = CCW(x3, y3, x4, y4, x1, y1);
     int cdb = CCW(x3, y3, x4, y4, x2, y2);
-    if (abc * abd == 0 && cda * cdb == 0) {  // ¼±ºÐÀÌ ÀÏÁ÷ ¼±ÀÎ °æ¿ì
-        return isOverlab(x1, y1, x2, y2, x3, y3, x4, y4);  //°ãÄ¡´Â ¼±ºÐÀÎÁö ÆÇº°ÇÏ±â
+    if (abc * abd == 0 && cda * cdb == 0) {  // ì„ ë¶„ì´ ì¼ì§ ì„ ì¸ ê²½ìš°
+        return isOverlab(x1, y1, x2, y2, x3, y3, x4, y4);  //ê²¹ì¹˜ëŠ” ì„ ë¶„ì¸ì§€ íŒë³„í•˜ê¸°
     }
-    else if (abc * abd <= 0 && cda * cdb <= 0) {  // ¼±ºÐÀÌ ±³Â÷ÇÏ´Â °æ¿ì
+    else if (abc * abd <= 0 && cda * cdb <= 0) {  // ì„ ë¶„ì´ êµì°¨í•˜ëŠ” ê²½ìš°
         return true;
     }
     return false;
