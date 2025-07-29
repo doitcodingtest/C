@@ -39,7 +39,7 @@ int main()
 }
 
 void DFS(int now, int depth) {
-    if (depth == 5 || arrive) { // ±íÀÌ°¡ 5°¡µÇ¸é ÇÁ·Î±×·¥ Á¾·á
+    if (depth == 5 || arrive) { // ê¹Šì´ê°€ 5ê°€ë˜ë©´ í”„ë¡œê·¸ë¨ ì¢…ë£Œ
         arrive = true;
         return;
     }
