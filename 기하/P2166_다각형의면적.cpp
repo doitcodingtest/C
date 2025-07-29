@@ -11,13 +11,13 @@ int main()
         cin >> x[i];
         cin >> y[i];
     }
-    x[N] = x[0]; // ¸¶Áö¸·°ú Ã³À½Á¡µµ CCW °è»ê¿¡ Æ÷ÇÔÇØÁÖ¾î¾ßÇÔ
+    x[N] = x[0]; // ë§ˆì§€ë§‰ê³¼ ì²˜ìŒì ë„ CCW ê³„ì‚°ì— í¬í•¨í•´ì£¼ì–´ì•¼í•¨
     y[N] = y[0];
     double result = 0;
     for (int i = 0; i < N; i++) {
         result += (x[i] * y[i + 1]) - (x[i + 1] * y[i]);
     }
     cout << fixed;
-    cout.precision(1); //¼Ò¼öÁ¡ ÀÚ¸®¼ö ¼³Á¤
+    cout.precision(1); //ì†Œìˆ˜ì  ìžë¦¬ìˆ˜ ì„¤ì •
     cout << abs(result) / 2.0;
 }
