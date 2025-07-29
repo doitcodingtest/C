@@ -17,7 +17,7 @@ int main()
 		}
 		sum = sum + A[i];
 	}
-	// ÇÑ °ú¸ñ°ú °ü·ÃµÈ ¼ö½ÄÀ» ÃÑÇÕÇÑ ÈÄ °ü·ÃµÈ ¼ö½ÄÀ¸·Î º¯È¯ÇØ ·ÎÁ÷ÀÌ °£´ÜÇØÁü
+	// í•œ ê³¼ëª©ê³¼ ê´€ë ¨ëœ ìˆ˜ì‹ì„ ì´í•©í•œ í›„ ê´€ë ¨ëœ ìˆ˜ì‹ìœ¼ë¡œ ë³€í™˜í•´ ë¡œì§ì´ ê°„ë‹¨í•´ì§
 	double result = sum * 100.0 / max / N;	
 	cout << result << "\n";
 }
