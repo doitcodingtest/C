@@ -13,12 +13,12 @@ int main()
 
     cin >> N >> M;
 
-    for (int i = 1; i <= N; i++) { // ÀÎÁ¢ Çà·Ä ÃÊ±âÈ­
+    for (int i = 1; i <= N; i++) { // ì¸ì ‘ í–‰ë ¬ ì´ˆê¸°í™”
         for (int j = 1; j <= N; j++) {
             if (i == j)
                 mdistance[i][j] = 0;
             else
-                mdistance[i][j] = 10000001; // ÃæºĞÈ÷ Å«¼ö·Î ÀúÀå
+                mdistance[i][j] = 10000001; // ì¶©ë¶„íˆ í°ìˆ˜ë¡œ ì €ì¥
         }
     }
 
@@ -28,7 +28,7 @@ int main()
         mdistance[s][e] = 1;
         mdistance[e][s] = 1;
     }
-    for (int k = 1; k <= N; k++) { // ÇÃ·ÎÀÌµå ¿ö¼È ¾Ë°í¸®Áò ¼öÇà
+    for (int k = 1; k <= N; k++) { // í”Œë¡œì´ë“œ ì›Œì…œ ì•Œê³ ë¦¬ì¦˜ ìˆ˜í–‰
         for (int i = 1; i <= N; i++) {
             for (int j = 1; j <= N; j++) {
                 if (mdistance[i][j] > mdistance[i][k] + mdistance[k][j])
@@ -43,7 +43,7 @@ int main()
         for (int j = 1; j <= N; j++) {
             temp = temp + mdistance[i][j];
         }
-        if (Min > temp)  // °¡Àå ÀÛÀº ÄÉºó º£ÀÌÄÁÀÇ ¼ö¸¦ Áö´Ï°í ÀÖ´Â i¸¦ Ã£±â
+        if (Min > temp)  // ê°€ì¥ ì‘ì€ ì¼€ë¹ˆ ë² ì´ì»¨ì˜ ìˆ˜ë¥¼ ì§€ë‹ˆê³  ìˆëŠ” ië¥¼ ì°¾ê¸°
         {
             Min = temp;
             Answer = i;
