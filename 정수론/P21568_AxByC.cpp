@@ -31,8 +31,8 @@ vector<long> Excute(long a, long b) {
         return ret;
     }
     long q = a / b;
-    vector<long> v = Excute(b, a % b); 	// Àç±Í ÇüÅÂ·Î È£Á¦¹ı ¼öÇà
-    ret[0] = v[1];  		// ¿ªÀ¸·Î ¿Ã¶ó¿À¸é¼­ X Y°ªÀ» °è»êÇØÁÖ´Â ·ÎÁ÷
+    vector<long> v = Excute(b, a % b); 	// ì¬ê·€ í˜•íƒœë¡œ í˜¸ì œë²• ìˆ˜í–‰
+    ret[0] = v[1];  		// ì—­ìœ¼ë¡œ ì˜¬ë¼ì˜¤ë©´ì„œ X Yê°’ì„ ê³„ì‚°í•´ì£¼ëŠ” ë¡œì§
     ret[1] = v[0] - v[1] * q;
     return ret;
 }
