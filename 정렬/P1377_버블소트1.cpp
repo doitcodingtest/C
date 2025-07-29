@@ -17,11 +17,11 @@ int main()
         A[i].second = i;
     }
 
-    sort(A.begin(), A.end()); //A¹è¿­ Á¤·Ä O(nlogn)½Ã°£ º¹Àâµµ
+    sort(A.begin(), A.end()); //Aë°°ì—´ ì •ë ¬ O(nlogn)ì‹œê°„ ë³µì¡ë„
 
     int Max = 0;
     for (int i = 0; i < N; i++) {
-        if (Max < A[i].second - i) //Á¤·Ä Àü index - Á¤·Ä ÈÄ index °è»ê °ªÀÇ ÃÖ´ë °ªÀ» Ã£¾Æ ÀúÀå
+        if (Max < A[i].second - i) //ì •ë ¬ ì „ index - ì •ë ¬ í›„ index ê³„ì‚° ê°’ì˜ ìµœëŒ€ ê°’ì„ ì°¾ì•„ ì €ì¥
             Max = A[i].second - i;
     }
     cout << Max + 1;
