@@ -28,7 +28,7 @@ int main()
         A[e].push_back(s);
     }
 
-    // ¹æ¹®ÇÒ ¼ö ÀÖ´Â ³ëµå°¡ ¿©·¯ °³ÀÎ °æ¿ì¿¡´Â ¹øÈ£°¡ ÀÛÀº °ÍÀ» ¸ÕÀú ¹æ¹® ÇÏ±â À§ÇØ Á¤·Ä
+    // ë°©ë¬¸í•  ìˆ˜ ìˆëŠ” ë…¸ë“œê°€ ì—¬ëŸ¬ ê°œì¸ ê²½ìš°ì—ëŠ” ë²ˆí˜¸ê°€ ì‘ì€ ê²ƒì„ ë¨¼ì € ë°©ë¬¸ í•˜ê¸° ìœ„í•´ ì •ë ¬
     for (int i = 1; i <= N; i++) {
         sort(A[i].begin(), A[i].end());
     }
@@ -36,12 +36,12 @@ int main()
     visited = vector<bool>(N+1, false); 
     DFS(Start);
     cout << "\n";
-    fill(visited.begin(), visited.end(), false); // ¹æ¹® ¹è¿­ ÃÊ±âÈ­
+    fill(visited.begin(), visited.end(), false); // ë°©ë¬¸ ë°°ì—´ ì´ˆê¸°í™”
     BFS(Start);
     cout << "\n";
 }
 
-void DFS(int node) {  // DFS±¸Çö
+void DFS(int node) {  // DFSêµ¬í˜„
     cout << node << " ";
     visited[node] = true;
     for (int i : A[node]) {
@@ -51,7 +51,7 @@ void DFS(int node) {  // DFS±¸Çö
     }
 }
 
-void BFS(int node) {  // BFS±¸Çö
+void BFS(int node) {  // BFSêµ¬í˜„
     queue<int> myqueue;
     myqueue.push(node);
     visited[node] = true;
