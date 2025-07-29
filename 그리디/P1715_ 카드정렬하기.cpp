@@ -10,7 +10,7 @@ int main()
 
     int N;
     cin >> N;
-    priority_queue<int,vector<int>, greater<int>> pq;   // ¿À¸§Â÷¼ø Á¤·Ä
+    priority_queue<int,vector<int>, greater<int>> pq;   // Â¿Ã€Â¸Â§Ã‚Ã·Â¼Ã¸ ÃÂ¤Â·Ã„
 
     int data;
     for (int i = 0; i < N; i++) {
