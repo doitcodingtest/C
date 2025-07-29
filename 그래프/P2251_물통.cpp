@@ -7,9 +7,9 @@ using namespace std;
 void BFS();
 static int Sender[] = {0, 0, 1, 1, 2, 2};
 static int Receiver[] = {1, 2, 0, 2, 0, 1};
-static bool visited[201][201];  //A BÀÇ ¹«°Ô¸¸ ÀÖÀ¸¸é CÀÇ ¹«°Ô°¡ °íÁ¤µÇ¹Ç·Î 2°³·Î¸¸ Ã¼Å© °¡´É
+static bool visited[201][201];  //A Bì˜ ë¬´ê²Œë§Œ ìˆìœ¼ë©´ Cì˜ ë¬´ê²Œê°€ ê³ ì •ë˜ë¯€ë¡œ 2ê°œë¡œë§Œ ì²´í¬ ê°€ëŠ¥
 static bool answer[201];
-static int now[3]; // A B C ¹°ÀÇ ¾çÀ» ÀúÀåÇÏ´Â ¹è¿­
+static int now[3]; // A B C ë¬¼ì˜ ì–‘ì„ ì €ì¥í•˜ëŠ” ë°°ì—´
 
 int main()
 {
@@ -35,20 +35,20 @@ void BFS() {
         queue.pop();
         int A = p.first;
         int B = p.second;
-        int C = now[2] - A - B; // C´Â ÀüÃ¼ ¹°ÀÇ ¾ç¿¡¼­ A¿Í B¸¦ »©ÁØ °Í
-        for (int k = 0; k < 6; k++) { // A->B, A->C, B->A, B->C, C->A, C->B 6°³ÀÇ ÄÉÀÌ½º·Î ÀÌµ¿
+        int C = now[2] - A - B; // CëŠ” ì „ì²´ ë¬¼ì˜ ì–‘ì—ì„œ Aì™€ Bë¥¼ ë¹¼ì¤€ ê²ƒ
+        for (int k = 0; k < 6; k++) { // A->B, A->C, B->A, B->C, C->A, C->B 6ê°œì˜ ì¼€ì´ìŠ¤ë¡œ ì´ë™
             int next[] = { A, B, C };
             next[Receiver[k]] += next[Sender[k]];
             next[Sender[k]] = 0;
-            if (next[Receiver[k]] > now[Receiver[k]]) { // ´ë»ó ¹°ÅëÀÇ ¿ë·®º¸´Ù ¹°ÀÌ ¸¹¾Æ ³ÑÄ¥ ¶§
-                // ÃÊ°úÇÏ´Â ¸¸Å­ ´Ù½Ã ÀÌÀü ¹°Åë¿¡ ³Ö¾îÁÜ
+            if (next[Receiver[k]] > now[Receiver[k]]) { // ëŒ€ìƒ ë¬¼í†µì˜ ìš©ëŸ‰ë³´ë‹¤ ë¬¼ì´ ë§ì•„ ë„˜ì¹  ë•Œ
+                // ì´ˆê³¼í•˜ëŠ” ë§Œí¼ ë‹¤ì‹œ ì´ì „ ë¬¼í†µì— ë„£ì–´ì¤Œ
                 next[Sender[k]] = next[Receiver[k]] - now[Receiver[k]];
-                next[Receiver[k]] = now[Receiver[k]]; // ´ë»ó ¹°ÅëÀº ÃÖ´ë·Î Ã¤¿öÁÜ
+                next[Receiver[k]] = now[Receiver[k]]; // ëŒ€ìƒ ë¬¼í†µì€ ìµœëŒ€ë¡œ ì±„ì›Œì¤Œ
             }
-            if (!visited[next[0]][next[1]]) { // A¿Í BÀÇ ¹°ÀÇ ¾çÀ» ÅëÇÏ¿© ¹æ¹® ¹è¿­ Ã¼Å©
+            if (!visited[next[0]][next[1]]) { // Aì™€ Bì˜ ë¬¼ì˜ ì–‘ì„ í†µí•˜ì—¬ ë°©ë¬¸ ë°°ì—´ ì²´í¬
                 visited[next[0]][next[1]] = true;
                 queue.push(make_pair(next[0], next[1]));
-                if (next[0] == 0) {  // AÀÇ ¹°ÀÇ ¾çÀÌ 0ÀÏ¶§ CÀÇ ¹°ÀÇ ¹«°Ô¸¦ Á¤´ä º¯¼ö¿¡ ÀúÀå
+                if (next[0] == 0) {  // Aì˜ ë¬¼ì˜ ì–‘ì´ 0ì¼ë•Œ Cì˜ ë¬¼ì˜ ë¬´ê²Œë¥¼ ì •ë‹µ ë³€ìˆ˜ì— ì €ì¥
                     answer[next[2]] = true;
                 }
             }
