@@ -10,7 +10,7 @@ int main()
 
 	int sum = 0;;
 	for (int i = 0; i < numbers.length(); i++){
-		sum += numbers[i] - '0';	 // numbers[i]¸¦ Á¤¼ö °ªÀ¸·Î °è»êÇÏ¿© sum¿¡ ´õÇÏ¿© ´©ÀûÇÏ±â
+		sum += numbers[i] - '0';	 // numbers[i]ë¥¼ ì •ìˆ˜ ê°’ìœ¼ë¡œ ê³„ì‚°í•˜ì—¬ sumì— ë”í•˜ì—¬ ëˆ„ì í•˜ê¸°
 	}
 	cout << sum << "\n";
 }
