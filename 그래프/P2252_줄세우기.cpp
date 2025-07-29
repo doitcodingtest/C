@@ -20,9 +20,9 @@ int main()
         int S, E;
         cin >> S >> E;
         A[S].push_back(E);
-        indegree[E]++; // ÁøÀÔÂ÷¼ö ¹è¿­ µ¥ÀÌÅÍ ÀúÀåÇÏ±â
+        indegree[E]++; // ì§„ì…ì°¨ìˆ˜ ë°°ì—´ ë°ì´í„° ì €ì¥í•˜ê¸°
     }
-    queue<int> queue;  // À§»ó Á¤·Ä ¼öÇà
+    queue<int> queue;  // ìœ„ìƒ ì •ë ¬ ìˆ˜í–‰
     for (int i = 1; i <= N; i++) {
         if (indegree[i] == 0) {
             queue.push(i);
