@@ -28,7 +28,7 @@ int main()
     cout << A[N-1][M-1] << "\n";
 }
 
-void BFS(int i, int j) {  // BFS±¸Çö
+void BFS(int i, int j) {  // BFSêµ¬í˜„
     queue<pair<int, int>> myqueue;
     myqueue.push(make_pair(i, j));
     while (!myqueue.empty()) {
@@ -40,8 +40,8 @@ void BFS(int i, int j) {  // BFS±¸Çö
         for (int k = 0; k < 4; k++) {
             int x = now[0] + dx[k];
             int y = now[1] + dy[k];
-            if (x >= 0 && y >= 0 && x < N && y < M) { // ÁÂÇ¥ À¯È¿¼º °Ë»ç
-                if (A[x][y] != 0 && !visited[x][y]) { // ¹Ì¹æ¹® Á¤Á¡ °Ë»ç
+            if (x >= 0 && y >= 0 && x < N && y < M) { // ì¢Œí‘œ ìœ íš¨ì„± ê²€ì‚¬
+                if (A[x][y] != 0 && !visited[x][y]) { // ë¯¸ë°©ë¬¸ ì •ì  ê²€ì‚¬
                     visited[x][y] = true;
                     A[x][y] = A[now[0]][now[1]] + 1; // depth update
                     myqueue.push(make_pair(x, y));
